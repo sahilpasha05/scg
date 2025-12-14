@@ -16,10 +16,93 @@ import dsrUltimaLogo from '../assets/7 DSR Ultima.jpeg';
 import dsrRbhLogo from '../assets/8 DSRRBH.jpeg';
 
 interface HomeProps {
-  onNavigate:  (view: PageView) => void;
+  onNavigate: (view: PageView) => void;
 }
 
-export const Home: React. FC<HomeProps> = ({ onNavigate }) => {
+// WhatsApp Floating Button Component
+const WhatsAppButton: React.FC = () => {
+  const [showMessage, setShowMessage] = useState(false);
+  const [displayedText, setDisplayedText] = useState('');
+  const fullText = "Hi, need assistance? ";
+  
+  useEffect(() => {
+    // Show message after 3 seconds
+    const showTimer = setTimeout(() => {
+      setShowMessage(true);
+    }, 3000);
+
+    return () => clearTimeout(showTimer);
+  }, []);
+
+  useEffect(() => {
+    if (showMessage && displayedText. length < fullText.length) {
+      const typingTimer = setTimeout(() => {
+        setDisplayedText(fullText.slice(0, displayedText.length + 1));
+      }, 50); // Typing speed
+
+      return () => clearTimeout(typingTimer);
+    }
+  }, [showMessage, displayedText]);
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '919036940860'; // Format: country code + number (no + or spaces)
+    const message = 'Hi, I need assistance';
+    const whatsappUrl = `https://wa.me/${phoneNumber}? text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  return (
+    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+      {/* Typing message bubble */}
+      <AnimatePresence>
+        {showMessage && (
+          <motion.div
+            initial={{ opacity: 0, x: 20, scale: 0.8 }}
+            animate={{ opacity: 1, x: 0, scale:  1 }}
+            exit={{ opacity: 0, x: 20, scale: 0.8 }}
+            className="bg-white px-4 py-3 rounded-2xl shadow-xl border border-slate-200 max-w-[200px]"
+          >
+            <p className="text-sm font-medium text-slate-800">
+              {displayedText}
+              {displayedText.length < fullText. length && (
+                <span className="inline-block w-0.5 h-4 bg-slate-800 ml-1 animate-pulse"></span>
+              )}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* WhatsApp button */}
+      <motion.button
+        onClick={handleWhatsAppClick}
+        initial={{ scale:  0 }}
+        animate={{ scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="group relative w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] rounded-full shadow-2xl flex items-center justify-center transition-all duration-300"
+      >
+        {/* Pulse animation */}
+        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></span>
+        
+        {/* WhatsApp icon from Flaticon */}
+        <img 
+          src="https://cdn-icons-png.flaticon.com/128/4423/4423697.png" 
+          alt="WhatsApp"
+          className="w-8 h-8 relative z-10"
+        />
+
+        {/* Notification badge */}
+        {showMessage && (
+          <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold border-2 border-white">
+            1
+          </span>
+        )}
+      </motion.button>
+    </div>
+  );
+};
+
+export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Client logos array
@@ -27,7 +110,7 @@ export const Home: React. FC<HomeProps> = ({ onNavigate }) => {
     { src: manaForestaLogo, alt: 'Mana Foresta' },
     { src: dsrWhiteWatersLogo, alt: 'DSR White Waters' },
     { src: sobhaDaffodilLogo, alt: 'Sobha Daffodil' },
-    { src: nvtlsLogo, alt: 'NVT LifeSquare' },
+    { src:  nvtlsLogo, alt: 'NVT LifeSquare' },
     { src:  vdmLogo, alt:  'VDM' },
     { src: senoritaLogo, alt: 'Sattva Senorita' },
     { src: dsrUltimaLogo, alt: 'DSR Ultima' },
@@ -44,6 +127,9 @@ export const Home: React. FC<HomeProps> = ({ onNavigate }) => {
 
   return (
     <div className="w-full">
+      {/* WhatsApp Floating Button */}
+      <WhatsAppButton />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-48">
         
@@ -55,8 +141,8 @@ export const Home: React. FC<HomeProps> = ({ onNavigate }) => {
               src={HERO_IMAGES[currentImageIndex]}
               alt="Background"
               initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity:  0 }}
+              animate={{ opacity:  1, scale: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -70,7 +156,7 @@ export const Home: React. FC<HomeProps> = ({ onNavigate }) => {
         {/* Content */}
         <div className="container mx-auto px-4 md:px-6 relative z-20 flex flex-col items-center text-center">
           <motion.div 
-            initial={{ opacity: 0, y:  30 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity:  1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-5xl mx-auto flex flex-col items-center"
@@ -85,7 +171,7 @@ export const Home: React. FC<HomeProps> = ({ onNavigate }) => {
               We replace chaos with clarity.  A tech-enabled, specialized CA firm exclusively for RWAs and Apartment Associations.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+            <div className="flex flex-col sm: flex-row gap-4 justify-center w-full sm:w-auto">
               <button 
                 onClick={() => onNavigate(PageView.SERVICES)}
                 className="group relative px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/20 rounded-full font-medium text-lg transition-all backdrop-blur-md overflow-hidden"
@@ -116,38 +202,37 @@ export const Home: React. FC<HomeProps> = ({ onNavigate }) => {
       </section>
 
       {/* Logo Carousel */}
-    {/* Logo Carousel */}
-<section className="bg-white border-b border-slate-100 py-12 overflow-hidden relative">
-  <div className="container mx-auto px-4 mb-8 flex items-center justify-center">
-    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-      Powering Communities Across India
-    </span>
-  </div>
-  
-  <div className="relative w-full overflow-hidden">
-    <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
-    <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
-    
-    <div className="flex whitespace-nowrap animate-scroll hover:[animation-play-state: paused]">
-      {[...Array(2)].map((_, setIndex) => (
-        <div key={setIndex} className="flex space-x-20 mx-10">
-          {clientLogos.map((logo, i) => (
-            <div 
-              key={`${setIndex}-${i}`} 
-              className="group flex items-center justify-center min-w-[140px] opacity-70 hover:opacity-100 transition-all duration-500 cursor-pointer"
-            >
-              <img 
-                src={logo.src} 
-                alt={logo.alt} 
-                className="h-16 w-auto max-w-[160px] object-contain transform group-hover:scale-110 transition-transform duration-500" 
-              />
-            </div>
-          ))}
+      <section className="bg-white border-b border-slate-100 py-12 overflow-hidden relative">
+        <div className="container mx-auto px-4 mb-8 flex items-center justify-center">
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+            Powering Communities Across India
+          </span>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+        
+        <div className="relative w-full overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+          
+          <div className="flex whitespace-nowrap animate-scroll hover:[animation-play-state: paused]">
+            {[...Array(2)].map((_, setIndex) => (
+              <div key={setIndex} className="flex space-x-20 mx-10">
+                {clientLogos.map((logo, i) => (
+                  <div 
+                    key={`${setIndex}-${i}`} 
+                    className="group flex items-center justify-center min-w-[140px] opacity-70 hover:opacity-100 transition-all duration-500 cursor-pointer"
+                  >
+                    <img 
+                      src={logo.src} 
+                      alt={logo. alt} 
+                      className="h-16 w-auto max-w-[160px] object-contain transform group-hover:scale-110 transition-transform duration-500" 
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Why Us / Quote Section - Modern Bento Grid Style */}
       <SectionWrapper background="dark" className="relative">
@@ -161,7 +246,7 @@ export const Home: React. FC<HomeProps> = ({ onNavigate }) => {
                 Why <span className="text-brand-400">Society Ledgers? </span>
               </h2>
               <p className="text-slate-400 text-lg leading-relaxed">
-                We don't just do the math. We build the financial infrastructure that keeps your community thriving.
+                We don't just do the math.  We build the financial infrastructure that keeps your community thriving. 
               </p>
             </div>
             
@@ -188,7 +273,7 @@ export const Home: React. FC<HomeProps> = ({ onNavigate }) => {
               <blockquote className="relative z-10">
                 <div className="w-12 h-12 flex items-center justify-center rounded-full bg-brand-500/20 text-brand-400 mb-8">
                   <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                    <path d="M14.017 21L14.017 18C14.017 16.896 14. 389 15.63 15.093 14.41C16.198 12.508 18.068 11.233 20.334 10.992V8H20.263C17.653 8 16.331 9.771 16.331 11.916V13H21.085V21H14.017ZM6.678 21L6.678 18C6.678 16.896 7.051 15.63 7.755 14.41C8.86 12.508 10.73 11.233 12.996 10.992V8H12.925C10.315 8 8.993 9.771 8.993 11.916V13H13.747V21H6.678Z"/>
+                    <path d="M14.017 21L14.017 18C14.017 16.896 14.389 15.63 15.093 14.41C16.198 12.508 18.068 11.233 20.334 10.992V8H20. 263C17.653 8 16.331 9.771 16.331 11.916V13H21.085V21H14.017ZM6.678 21L6.678 18C6.678 16.896 7.051 15.63 7.755 14.41C8.86 12.508 10.73 11.233 12.996 10.992V8H12.925C10.315 8 8.993 9.771 8.993 11.916V13H13.747V21H6.678Z"/>
                   </svg>
                 </div>
                 <p className="text-2xl md:text-3xl font-medium text-white leading-relaxed mb-8">
@@ -221,16 +306,16 @@ export const Home: React. FC<HomeProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="grid md: grid-cols-3 gap-6 px-4">
+          <div className="grid md:grid-cols-3 gap-6 px-4">
             {TESTIMONIALS.slice(0, 3).map((t, i) => (
               <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
                 {/* Profile First */}
                 <div className="flex items-center gap-4 mb-6 border-b border-slate-50 pb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-brand-100 to-blue-200 rounded-full flex items-center justify-center text-brand-700 font-bold text-lg">
-                    {t. name.charAt(0)}
+                    {t.name. charAt(0)}
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-slate-900">{t. name}</p>
+                    <p className="text-sm font-bold text-slate-900">{t.name}</p>
                     <p className="text-xs text-slate-500">{t.societyName}</p>
                   </div>
                 </div>
@@ -259,7 +344,7 @@ export const Home: React. FC<HomeProps> = ({ onNavigate }) => {
               </p>
               <button 
                 onClick={() => onNavigate(PageView.CONTACT)}
-                className="bg-white text-brand-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-50 shadow-xl transition-all transform hover:-translate-y-1 active: scale-95"
+                className="bg-white text-brand-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-50 shadow-xl transition-all transform hover:-translate-y-1 active:scale-95"
               >
                 Schedule Free Consultation
               </button>
