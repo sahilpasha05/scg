@@ -16,21 +16,27 @@ import {
 } from 'lucide-react';
 import { type NavItem, PageView, type ServiceItem, type StrengthItem, type TeamMember, type Testimonial } from './types';
 
+// Import team member images
+import arvindAgrawalImg from './assets/ArvindKrAgarwal.jpg';
+import anoopAgrawalImg from './assets/AnoopOnline Copy.jpg';
+import kunalMaheshwariImg from './assets/KunalMaheshwari.jpeg';
+import pavanBhardwajImg from './assets/PavanGururajBharadwaj.jpg';
+
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', view: PageView. HOME },
+  { label: 'Home', view: PageView.HOME },
   { label: 'About Us', view: PageView.ABOUT },
   { label: 'Services', view: PageView. SERVICES },
   { label: 'Core Strengths', view: PageView. CORE_STRENGTHS },
   { label: 'Team', view: PageView.TEAM },
-  { label: 'Testimonials', view: PageView.TESTIMONIALS },
+  { label: 'Testimonials', view: PageView. TESTIMONIALS },
   { label: 'Contact', view: PageView.CONTACT },
 ];
 
 export const HERO_IMAGES = [
-  "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1920", // Apartment Complex
-  "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1920", // Accounting/Finance
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1920", // Modern Building
-  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1920"  // Professional Meeting
+  "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1920",
+  "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1920",
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1920",
+  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1920"
 ];
 
 export const SERVICES:  ServiceItem[] = [
@@ -48,7 +54,7 @@ export const SERVICES:  ServiceItem[] = [
   },
   {
     title: "Income Tax Compliance",
-    description:  "Expert handling of TDS, ITR filing, and tax planning specific to housing societies. We minimize liability while ensuring 100% adherence to tax laws.",
+    description: "Expert handling of TDS, ITR filing, and tax planning specific to housing societies. We minimize liability while ensuring 100% adherence to tax laws.",
     icon: <Scale className="w-6 h-6" />,
     image: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=800&h=600"
   },
@@ -56,7 +62,7 @@ export const SERVICES:  ServiceItem[] = [
     title: "GST Advisory & Filing",
     description: "Navigation of complex GST regulations for RWAs.  From registration to monthly filing and input tax credit reconciliation, we handle it all.",
     icon: <Landmark className="w-6 h-6" />,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800&h=600"
+    image:  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800&h=600"
   },
   {
     title: "Registrar & Legal Compliance",
@@ -75,7 +81,7 @@ export const SERVICES:  ServiceItem[] = [
 export const STRENGTHS: StrengthItem[] = [
   {
     title: "Niche Expertise",
-    description:  "We don't do everything. We specialize exclusively in Housing Societies & RWAs.",
+    description: "We don't do everything. We specialize exclusively in Housing Societies & RWAs.",
     icon: <ShieldCheck className="w-6 h-6 text-brand-600" />
   },
   {
@@ -113,7 +119,7 @@ export const DETAILED_STRENGTHS: StrengthItem[] = [
   },
   {
     title: "End-to-End Support",
-    description: "We manage everything from day-to-day bookkeeping, invoice raising, expense recording, and bank reconciliation to GST compliance, TDS compliance, annual accounts finalization, audit coordination, and advisory services. Think of us as your virtual finance office—ready when you need it.",
+    description: "We manage everything from day-to-day bookkeeping, invoice raising, expense recording, and bank reconciliation to GST compliance, TDS compliance, annual accounts finalization, audit coordination, and advisory services.  Think of us as your virtual finance office—ready when you need it.",
     icon: <Layers className="w-8 h-8" />
   },
   {
@@ -133,65 +139,65 @@ export const TEAM: TeamMember[] = [
     name: "CA Arvind K.  Agrawal",
     role: "Chief Mentor",
     qualification: "FCA",
-    image: "src/assets/ArvindKrAgarwal.jpg",
+    image: arvindAgrawalImg,
     bio: "Mr. Arvind Kumar Agrawal is a Fellow Member of the Institute of Chartered Accountants of India.  Before completing his CA in 1990, he had a strong academic record.  He is also a Chartered Trust and Estate Planner certified by the American Academy of Financial Management, USA. He carries rich experience in finance processes, audit, Income Tax, and GST consulting and is passionate about IT-enabled enhancements in professional practice."
   },
   {
     name: "CA Anoop K. Agrawal",
     role: "Principal Consultant (Operations)",
     qualification: "FCA",
-    image: "src/assets/AnoopOnline Copy.jpg",
-    bio: "Mr.  Anoop Kumar Agrawal has been a Fellow Member of the Institute of Chartered Accountants of India since 2000. He provides professional services including audit, management consultancy, tax consultancy, accounting services, statutory compliance consulting, and secretarial services.  Prior to starting his CA practice in 2012, he worked on financial process review and improvement projects for domestic and international companies."
+    image: anoopAgrawalImg,
+    bio: "Mr. Anoop Kumar Agrawal has been a Fellow Member of the Institute of Chartered Accountants of India since 2000. He provides professional services including audit, management consultancy, tax consultancy, accounting services, statutory compliance consulting, and secretarial services. Prior to starting his CA practice in 2012, he worked on financial process review and improvement projects for domestic and international companies."
   },
   {
     name: "Mr. Kunal Maheshwari",
-    role: "Principal Consultant (Technology)",
+    role:  "Principal Consultant (Technology)",
     qualification: "M.Tech (IIT Madras)",
-    image: "src/assets/KunalMaheshwari.jpeg",
+    image: kunalMaheshwariImg,
     bio: "Kunal Maheshwari is an AI consultant and serial entrepreneur with over 20 years of engineering leadership experience. An IIT Madras graduate, he has built and scaled products, teams, and businesses, including the All Is Well App."
   },
   {
     name: "Mr. Pavan Gururaj Bhardwaj",
-    role: "Industry Advisor",
+    role:  "Industry Advisor",
     qualification: "Industry Advisor",
-    image: "src/assets/PavanGururajBharadwaj.jpg",
-    bio: "Pavan Bhardwaj is an entrepreneur and founder of Esteem Enterprises, providing Power, Solar, Water, and Home Automation solutions.  He served two terms as Founder President of his apartment association in Hoodi (Bengaluru) and is an Assistant Chief Traffic Warden with the BCP Traffic Warden Organisation."
+    image: pavanBhardwajImg,
+    bio: "Pavan Bhardwaj is an entrepreneur and founder of Esteem Enterprises, providing Power, Solar, Water, and Home Automation solutions. He served two terms as Founder President of his apartment association in Hoodi (Bengaluru) and is an Assistant Chief Traffic Warden with the BCP Traffic Warden Organisation."
   }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name:  "Mr. Satish Rustagi",
-    societyName:  "Sattva Senorita Apartments",
-    units:  423,
+    name: "Mr. Satish Rustagi",
+    societyName: "Sattva Senorita Apartments",
+    units: 423,
     content: "The team at Society Ledgers don't just handle the accounts; they provide proactive advice that helps us make informed decisions. Their insights carry immense value.  For our 423-unit society, they completely transformed the way accounting was handled and brought in significant process improvements and compliance rigor, with complete process ownership.  We have thoroughly enjoyed our association with them for over 5 years."
   },
   {
     name: "Mrs. Preethi Subramanian",
     societyName: "NVT LifeSquare Villas",
     units: 65,
-    content: "Though we are a small association with only 65 villa units, the Society Ledgers team streamlined our accounting processes and advised us to migrate from Tally to MyGate for real-time visibility of accounts and elimination of data duplication.  They planned and executed the migration meticulously and identified compliance gaps in our earlier setup, providing appropriate solutions. We are very happy with our association with them for accounting and compliance services."
+    content: "Though we are a small association with only 65 villa units, the Society Ledgers team streamlined our accounting processes and advised us to migrate from Tally to MyGate for real-time visibility of accounts and elimination of data duplication. They planned and executed the migration meticulously and identified compliance gaps in our earlier setup, providing appropriate solutions. We are very happy with our association with them for accounting and compliance services."
   },
   {
     name: "Mr. Anand Agrawal",
-    societyName:  "DSR Whitewaters",
+    societyName: "DSR Whitewaters",
     units: 412,
-    content: "As an RWA of 400+ units, we feel fortunate to have engaged Society Ledgers. From the early stages, their value addition was evident. They identified an important GST compliance gap and helped us correct it through detailed data analysis and corrective measures. Their depth of knowledge and experience in RWA compliance matters is truly commendable."
+    content: "As an RWA of 400+ units, we feel fortunate to have engaged Society Ledgers.  From the early stages, their value addition was evident.  They identified an important GST compliance gap and helped us correct it through detailed data analysis and corrective measures. Their depth of knowledge and experience in RWA compliance matters is truly commendable."
   },
   {
-    name:  "Mr. B. M.  Rajan",
+    name: "Mr. B. M. Rajan",
     societyName: "Sobha Daffodil Condominiums",
     units: 432,
-    content: "In our 7 years of association with Society Ledgers, we have been impressed with their compliance-oriented approach, responsiveness, and accuracy. Their proactive working style ensures we rarely need to follow up on accounting or compliance matters. They transitioned us from periodic accounting to real-time accounting, significantly improving compliance levels and stakeholder satisfaction. Their processes also helped us identify non-compliant vendors, enabling corrective actions. We look forward to a long-term association with them."
+    content: "In our 7 years of association with Society Ledgers, we have been impressed with their compliance-oriented approach, responsiveness, and accuracy. Their proactive working style ensures we rarely need to follow up on accounting or compliance matters. They transitioned us from periodic accounting to real-time accounting, significantly improving compliance levels and stakeholder satisfaction.  Their processes also helped us identify non-compliant vendors, enabling corrective actions.  We look forward to a long-term association with them."
   },
   {
     name: "Mr. Biplob Das",
-    societyName:  "Mana Foresta",
+    societyName: "Mana Foresta",
     units: 580,
     content: "Working with Society Ledgers has been a game-changer for our large community. Their systematic approach to compliance and transparent reporting has built tremendous trust among our residents."
   },
   {
-    name:  "Mr. Abhishek Kumar",
+    name: "Mr. Abhishek Kumar",
     societyName: "DSR Sunrise Towers",
     units: 320,
     content: "The professionalism and expertise of Society Ledgers team is exceptional. They have simplified our complex accounting requirements and made compliance stress-free for our management committee."
