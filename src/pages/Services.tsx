@@ -1,7 +1,6 @@
 import React from 'react';
 import { SERVICES } from '../constants';
 import { SectionWrapper } from '../components/UI/SectionWrapper';
-import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const Services:  React.FC = () => {
@@ -11,7 +10,7 @@ export const Services:  React.FC = () => {
          <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Services</h1>
             <p className="text-xl text-slate-300">
-                Comprehensive accounting and compliance solutions designed specifically for the unique regulatory needs of Resident Welfare Associations. 
+                Comprehensive accounting and compliance solutions designed specifically for the unique regulatory needs of Resident Welfare Associations.  
             </p>
          </div>
       </SectionWrapper>
@@ -21,7 +20,7 @@ export const Services:  React.FC = () => {
             {SERVICES.map((service, idx) => (
                 <motion. div 
                   key={idx}
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y:  50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6 }}
@@ -47,30 +46,11 @@ export const Services:  React.FC = () => {
                     <div className="w-full md:w-1/2">
                         <h3 className="text-3xl font-bold text-slate-900 mb-4">{service.title}</h3>
                         <div className="h-1 w-20 bg-brand-500 rounded-full mb-6"></div>
-                        <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                        <p className="text-lg text-slate-600 leading-relaxed">
                             {service.description}
                         </p>
-                        
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div className="flex items-center gap-3 text-slate-700 font-medium p-3 bg-slate-50 rounded-lg border border-slate-100">
-                                <Check size={18} className="text-green-500 flex-shrink-0" />
-                                <span>Expert Supervision</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-slate-700 font-medium p-3 bg-slate-50 rounded-lg border border-slate-100">
-                                <Check size={18} className="text-green-500 flex-shrink-0" />
-                                <span>Timely Execution</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-slate-700 font-medium p-3 bg-slate-50 rounded-lg border border-slate-100">
-                                <Check size={18} className="text-green-500 flex-shrink-0" />
-                                <span>Risk Mitigation</span>
-                            </div>
-                            <div className="flex items-center gap-3 text-slate-700 font-medium p-3 bg-slate-50 rounded-lg border border-slate-100">
-                                <Check size={18} className="text-green-500 flex-shrink-0" />
-                                <span>Digital Records</span>
-                            </div>
-                        </div>
                     </div>
-                </motion.div>
+                </motion. div>
             ))}
         </div>
       </div>
@@ -79,7 +59,7 @@ export const Services:  React.FC = () => {
          <div className="container mx-auto px-4">
              <h3 className="text-2xl font-bold text-slate-900 mb-4">Recommended Provider for MyGate</h3>
              <p className="text-slate-600 max-w-2xl mx-auto mb-8">
-                 We seamlessly integrate with community management apps like MyGate, ensuring your data flows directly from the gate to the ledger without manual errors.
+                 We seamlessly integrate with community management apps like MyGate, ensuring your data flows directly from the gate to the ledger without manual errors. 
              </p>
          </div>
       </div>

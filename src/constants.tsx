@@ -22,8 +22,15 @@ import anoopAgrawalImg from './assets/AnoopOnline Copy.jpg';
 import kunalMaheshwariImg from './assets/KunalMaheshwari.jpeg';
 import pavanBhardwajImg from './assets/PavanGururajBharadwaj.jpg';
 
+// Import service images
+import accountingImg from './assets/hgvg.jpeg';
+import incomeTaxImg from './assets/hhhh.JPG';
+import gstImg from './assets/Gemini_Generated_Image_8mups58mups58mup.png';
+import registrarImg from './assets/unnamed (1).jpg';
+import budgetingImg from './assets/unnamed (2).jpg';
+
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', view: PageView.HOME },
+  { label: 'Home', view: PageView. HOME },
   { label: 'About Us', view: PageView.ABOUT },
   { label: 'Services', view: PageView. SERVICES },
   { label: 'Core Strengths', view: PageView. CORE_STRENGTHS },
@@ -42,46 +49,46 @@ export const HERO_IMAGES = [
 export const SERVICES:  ServiceItem[] = [
   {
     title: "Society Accounting & Bookkeeping",
-    description: "End-to-end management of your society's accounts with precision and transparency.  We handle daily vouchers, expense tracking, and bank reconciliation.",
-    icon: <BookOpen className="w-6 h-6" />,
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800&h=600"
+    description: "Preparation and maintenance of day to day accounts, ledgers, member wise billing, maintenance receipts, and year end financial statements.",
+    icon: <BookOpen className="w-10 h-10" />,
+    image: accountingImg
   },
   {
     title: "Annual Audit & Reporting",
-    description: "Comprehensive statutory audits and detailed financial reporting for AGM readiness. We ensure your balance sheets are accurate and compliant with state regulations.",
-    icon: <FileCheck className="w-6 h-6" />,
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800&h=600"
+    description: "Close coordination with statutory auditors, preparation of audit-ready accounts, and support for audit queries and observations.",
+    icon: <FileCheck className="w-10 h-10" />,
+    image:  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800&h=600"
   },
   {
     title: "Income Tax Compliance",
-    description: "Expert handling of TDS, ITR filing, and tax planning specific to housing societies. We minimize liability while ensuring 100% adherence to tax laws.",
-    icon: <Scale className="w-6 h-6" />,
-    image: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=800&h=600"
+    description: "Filing of Income Tax Returns (ITR), handling TDS returns, and ensuring proper treatment of income from members vs. non-members.",
+    icon: <Scale className="w-10 h-10" />,
+    image:  incomeTaxImg
   },
   {
     title: "GST Advisory & Filing",
-    description: "Navigation of complex GST regulations for RWAs.  From registration to monthly filing and input tax credit reconciliation, we handle it all.",
-    icon: <Landmark className="w-6 h-6" />,
-    image:  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800&h=600"
+    description: "Support with GST applicability on member as well as non-member income, preparation of returns, and compliance management.",
+    icon: <Landmark className="w-10 h-10" />,
+    image:  gstImg
   },
   {
     title: "Registrar & Legal Compliance",
-    description: "Adherence to Societies Acts, Model Bye-Laws, and Registrar requirements. We assist with amendment of bye-laws, election conduct, and dispute resolution.",
-    icon: <Gavel className="w-6 h-6" />,
-    image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800&h=600"
+    description: "Assistance with annual returns to the Registrar of Cooperative Societies, AGM/GBM documentation, resolution filing, and more.",
+    icon: <Gavel className="w-10 h-10" />,
+    image: registrarImg
   },
   {
     title: "Budgeting & Financial Advisory",
-    description: "Strategic financial planning to optimize maintenance charges and sinking funds. We help you plan for major repairs and long-term sustainability.",
-    icon: <TrendingUp className="w-6 h-6" />,
-    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=800&h=600"
+    description: "Preparation of annual budgets, reserve fund analysis, and strategic financial planning to ensure long-term sustainability.",
+    icon: <TrendingUp className="w-10 h-10" />,
+    image: budgetingImg
   }
 ];
 
 export const STRENGTHS: StrengthItem[] = [
   {
     title: "Niche Expertise",
-    description: "We don't do everything. We specialize exclusively in Housing Societies & RWAs.",
+    description: "We don't do everything.  We specialize exclusively in Housing Societies & RWAs.",
     icon: <ShieldCheck className="w-6 h-6 text-brand-600" />
   },
   {
@@ -136,7 +143,7 @@ export const DETAILED_STRENGTHS: StrengthItem[] = [
 
 export const TEAM: TeamMember[] = [
   {
-    name: "CA Arvind K.  Agrawal",
+    name: "CA Arvind K. Agrawal",
     role: "Chief Mentor",
     qualification: "FCA",
     image: arvindAgrawalImg,
@@ -151,16 +158,16 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Mr. Kunal Maheshwari",
-    role:  "Principal Consultant (Technology)",
+    role: "Principal Consultant (Technology)",
     qualification: "M.Tech (IIT Madras)",
     image: kunalMaheshwariImg,
     bio: "Kunal Maheshwari is an AI consultant and serial entrepreneur with over 20 years of engineering leadership experience. An IIT Madras graduate, he has built and scaled products, teams, and businesses, including the All Is Well App."
   },
   {
     name: "Mr. Pavan Gururaj Bhardwaj",
-    role:  "Industry Advisor",
+    role: "Industry Advisor",
     qualification: "Industry Advisor",
-    image: pavanBhardwajImg,
+    image:  pavanBhardwajImg,
     bio: "Pavan Bhardwaj is an entrepreneur and founder of Esteem Enterprises, providing Power, Solar, Water, and Home Automation solutions. He served two terms as Founder President of his apartment association in Hoodi (Bengaluru) and is an Assistant Chief Traffic Warden with the BCP Traffic Warden Organisation."
   }
 ];
@@ -170,7 +177,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Mr. Satish Rustagi",
     societyName: "Sattva Senorita Apartments",
     units: 423,
-    content: "The team at Society Ledgers don't just handle the accounts; they provide proactive advice that helps us make informed decisions. Their insights carry immense value.  For our 423-unit society, they completely transformed the way accounting was handled and brought in significant process improvements and compliance rigor, with complete process ownership.  We have thoroughly enjoyed our association with them for over 5 years."
+    content:  "The team at Society Ledgers don't just handle the accounts; they provide proactive advice that helps us make informed decisions. Their insights carry immense value. For our 423-unit society, they completely transformed the way accounting was handled and brought in significant process improvements and compliance rigor, with complete process ownership. We have thoroughly enjoyed our association with them for over 5 years."
   },
   {
     name: "Mrs. Preethi Subramanian",
@@ -179,19 +186,19 @@ export const TESTIMONIALS: Testimonial[] = [
     content: "Though we are a small association with only 65 villa units, the Society Ledgers team streamlined our accounting processes and advised us to migrate from Tally to MyGate for real-time visibility of accounts and elimination of data duplication. They planned and executed the migration meticulously and identified compliance gaps in our earlier setup, providing appropriate solutions. We are very happy with our association with them for accounting and compliance services."
   },
   {
-    name: "Mr. Anand Agrawal",
+    name: "Mr.  Anand Agrawal",
     societyName: "DSR Whitewaters",
     units: 412,
-    content: "As an RWA of 400+ units, we feel fortunate to have engaged Society Ledgers.  From the early stages, their value addition was evident.  They identified an important GST compliance gap and helped us correct it through detailed data analysis and corrective measures. Their depth of knowledge and experience in RWA compliance matters is truly commendable."
+    content: "As an RWA of 400+ units, we feel fortunate to have engaged Society Ledgers. From the early stages, their value addition was evident. They identified an important GST compliance gap and helped us correct it through detailed data analysis and corrective measures.  Their depth of knowledge and experience in RWA compliance matters is truly commendable."
   },
   {
     name: "Mr. B. M. Rajan",
     societyName: "Sobha Daffodil Condominiums",
     units: 432,
-    content: "In our 7 years of association with Society Ledgers, we have been impressed with their compliance-oriented approach, responsiveness, and accuracy. Their proactive working style ensures we rarely need to follow up on accounting or compliance matters. They transitioned us from periodic accounting to real-time accounting, significantly improving compliance levels and stakeholder satisfaction.  Their processes also helped us identify non-compliant vendors, enabling corrective actions.  We look forward to a long-term association with them."
+    content: "In our 7 years of association with Society Ledgers, we have been impressed with their compliance-oriented approach, responsiveness, and accuracy. Their proactive working style ensures we rarely need to follow up on accounting or compliance matters.  They transitioned us from periodic accounting to real-time accounting, significantly improving compliance levels and stakeholder satisfaction. Their processes also helped us identify non-compliant vendors, enabling corrective actions.  We look forward to a long-term association with them."
   },
   {
-    name: "Mr. Biplob Das",
+    name: "Mr.  Biplob Das",
     societyName: "Mana Foresta",
     units: 580,
     content: "Working with Society Ledgers has been a game-changer for our large community. Their systematic approach to compliance and transparent reporting has built tremendous trust among our residents."

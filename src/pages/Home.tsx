@@ -41,7 +41,7 @@ const WhatsAppButton:  React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (showMessage && displayedText.length < fullText.length) {
+    if (showMessage && displayedText. length < fullText.length) {
       const typingTimer = setTimeout(() => {
         setDisplayedText(fullText. slice(0, displayedText.length + 1));
       }, 50);
@@ -62,7 +62,7 @@ const WhatsAppButton:  React.FC = () => {
         {showMessage && (
           <motion.div
             initial={{ opacity: 0, x: 20, scale: 0.8 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
+            animate={{ opacity:  1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 20, scale: 0.8 }}
             className="bg-white px-4 py-3 rounded-2xl shadow-xl border border-slate-200 max-w-[200px]"
           >
@@ -117,7 +117,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   // Client logos array
   const clientLogos = [
     { src: manaForestaLogo, alt: 'Mana Foresta' },
-    { src:  dsrWhiteWatersLogo, alt: 'DSR White Waters' },
+    { src: dsrWhiteWatersLogo, alt: 'DSR White Waters' },
     { src: sobhaDaffodilLogo, alt: 'Sobha Daffodil' },
     { src: nvtlsLogo, alt: 'NVT LifeSquare' },
     { src: vdmLogo, alt: 'VDM' },
@@ -189,13 +189,13 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
         <div className="container mx-auto px-4 md:px-6 relative z-20 flex flex-col items-center text-center">
           <motion.div 
-            initial={{ opacity: 0, y:  30 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity:  1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-5xl mx-auto flex flex-col items-center"
           >
-            <p className="text-sm md:text-base text-slate-300 mb-6 italic max-w-3xl mx-auto">
-              Do you know that cost of non-compliance/not adequate compliance is significantly higher than cost of proper compliance? 
+            <p className="text-lg md:text-xl text-slate-300 mb-6 font-medium italic text-justify max-w-3xl mx-auto">
+              Do you know that cost of non-compliance/not adequate compliance is significantly higher than cost of proper compliance?  
             </p>
 
             <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-8 leading-[1.1]">
@@ -209,7 +209,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
               <button 
-                onClick={() => onNavigate(PageView. SERVICES)}
+                onClick={() => onNavigate(PageView.SERVICES)}
                 className="group relative px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/20 rounded-full font-medium text-lg transition-all backdrop-blur-md overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
@@ -259,7 +259,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   >
                     <img 
                       src={logo.src} 
-                      alt={logo.alt} 
+                      alt={logo. alt} 
                       className="h-16 w-auto max-w-[160px] object-contain transform group-hover:scale-110 transition-transform duration-500" 
                     />
                   </div>
@@ -286,7 +286,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             </div>
             
             <div className="grid sm:grid-cols-2 gap-4">
-              {STRENGTHS. map((strength, idx) => (
+              {STRENGTHS.map((strength, idx) => (
                 <div key={idx} className="group p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors duration-300">
                   <div className="mb-4 text-brand-400 group-hover:text-brand-300 transition-colors bg-brand-900/20 w-fit p-3 rounded-xl">
                     {strength. icon}
@@ -310,7 +310,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   <h3 className="text-2xl font-bold text-white">Our Commitment</h3>
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-brand-500/20 text-brand-400">
                     <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                      <path d="M14.017 21L14.017 18C14.017 16.896 14.389 15.63 15.093 14.41C16.198 12.508 18.068 11.233 20.334 10.992V8H20.263C17.653 8 16.331 9.771 16.331 11.916V13H21.085V21H14.017ZM6.678 21L6.678 18C6.678 16.896 7.051 15.63 7.755 14.41C8.86 12.508 10.73 11.233 12.996 10.992V8H12.925C10.315 8 8.993 9.771 8.993 11.916V13H13.747V21H6.678Z"/>
+                      <path d="M14. 017 21L14.017 18C14.017 16.896 14.389 15. 63 15.093 14.41C16.198 12.508 18.068 11.233 20.334 10.992V8H20.263C17.653 8 16.331 9.771 16.331 11.916V13H21. 085V21H14.017ZM6.678 21L6.678 18C6.678 16.896 7.051 15.63 7.755 14.41C8.86 12.508 10.73 11.233 12.996 10.992V8H12.925C10.315 8 8.993 9.771 8.993 11.916V13H13.747V21H6.678Z"/>
                     </svg>
                   </div>
                 </div>

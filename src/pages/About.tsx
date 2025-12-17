@@ -26,7 +26,8 @@ export const About:  React.FC = () => {
           
           {/* Official Partner */}
           <div className="inline-flex flex-col md:flex-row items-center justify-center bg-brand-50 border border-brand-100 px-8 py-6 rounded-xl gap-4">
-             <span className="bg-brand-600 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">Official Partner</span>
+             <span className="bg-brand-600 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">A Trust base mutual collaboration
+</span>
              <p className="text-slate-700 font-medium text-center md:text-left">
                 As a recommended service provider of <span className="font-bold text-slate-900">MyGate</span>, Society Ledgers is recognized as an exclusive accounting and compliance platform for residential societies.
              </p>
