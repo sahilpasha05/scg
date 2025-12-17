@@ -11,7 +11,7 @@ import rajanBMImg from '../assets/Ranan BM Sobha Daffodil.jpg';
 import biplobDasImg from '../assets/BiplobDasManaForesta.jpg';
 import abhishekKumarImg from '../assets/AbhishekKumarMyGate.jpg';
 
-export const Testimonials: React. FC = () => {
+export const Testimonials: React.FC = () => {
   // Profile images array matching the order in TESTIMONIALS
   const profileImages = [
     satishRustagiImg,
@@ -26,7 +26,7 @@ export const Testimonials: React. FC = () => {
     <div className="pt-20">
       <SectionWrapper background="dark">
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-block px-4 py-1. 5 rounded-full bg-brand-900/50 backdrop-blur-sm text-brand-200 text-xs font-semibold mb-6 border border-brand-500/30">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-brand-900/50 backdrop-blur-sm text-brand-200 text-xs font-semibold mb-6 border border-brand-500/30">
               Trusted by Leading Societies
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Testimonials</h1>
@@ -50,7 +50,7 @@ export const Testimonials: React. FC = () => {
                   >
                       {/* Profile Header */}
                       <div className="flex items-start gap-4 mb-6 border-b border-slate-50 pb-6">
-                          <div className="w-14 h-14 flex-shrink-0 rounded-full overflow-hidden border-2 border-brand-200">
+                          <div className="w-20 h-20 flex-shrink-0 rounded-full overflow-hidden border-2 border-brand-200">
                               <img 
                                 src={profileImages[i % profileImages.length]} 
                                 alt={t.name}

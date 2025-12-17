@@ -4,6 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { PageView } from '../../types';
 import { NAV_ITEMS } from '../../constants';
 
+// Import logo
+import logo from '../../assets/StandardLogo.jpeg';
+
 interface HeaderProps {
   currentView: PageView;
   onNavigate: (view: PageView) => void;
@@ -17,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window. addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -31,34 +34,41 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
     <>
       {/* Floating Pill Header */}
       <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
-        <motion.div 
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
-          className={`
-            pointer-events-auto
-            flex items-center justify-between 
-            pl-4 pr-2 py-2.5 
-            rounded-full 
-            border border-white/20 
-            shadow-xl shadow-slate-900/5
-            backdrop-blur-xl
-            transition-all duration-300
-            ${isScrolled || isMobileMenuOpen ? 'bg-white/90 w-full max-w-7xl' : 'bg-white/70 w-full max-w-6xl hover:bg-white/90'}
-          `}
-        >
-          {/* Logo Section */}
-          <div 
-            className="flex items-center gap-2 cursor-pointer group mr-8"
+        <div className="flex items-center gap-6 pointer-events-auto">
+          {/* Logo Section - Separate from Navbar */}
+          <motion.div
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
+            className="flex flex-col items-center cursor-pointer group"
             onClick={() => handleNavClick(PageView.HOME)}
           >
-            <div className="bg-brand-600 text-white w-8 h-8 flex items-center justify-center rounded-full font-bold text-xs tracking-tight group-hover:scale-110 transition-transform duration-300 shadow-md border border-brand-500">
-              SL
+            <div className="w-11 h-11 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 rounded-full overflow-hidden">
+              <img 
+                src={logo} 
+                alt="Society Ledgers Logo"
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-slate-900 text-sm leading-none tracking-tight">Society Ledgers</span>
-            </div>
-          </div>
+            <span className="font-bold text-white text-[10px] leading-none tracking-tight mt-1.5">Society Ledgers</span>
+          </motion.div>
+
+          {/* Navigation Bar */}
+          <motion.div 
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, type: "spring", stiffness: 100, delay: 0.1 }}
+            className={`
+              flex items-center justify-between 
+              pl-4 pr-2 py-2.5 
+              rounded-full 
+              border border-white/20 
+              shadow-xl shadow-slate-900/5
+              backdrop-blur-xl
+              transition-all duration-300
+              ${isScrolled || isMobileMenuOpen ? 'bg-white/90' : 'bg-white/70 hover:bg-white/90'}
+            `}
+          >
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1 bg-slate-100/50 p-1 rounded-full border border-slate-200/50">
@@ -67,8 +77,8 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
                 key={item.view}
                 onClick={() => handleNavClick(item.view)}
                 className={`
-                  px-4 py-1. 5 rounded-full text-xs font-medium transition-all duration-300
-                  ${currentView === item. view 
+                  px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-300
+                  ${currentView === item.view 
                     ? 'bg-white text-brand-600 shadow-sm font-semibold' 
                     : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'}
                 `}
@@ -96,6 +106,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
             </button>
           </div>
         </motion.div>
+        </div>
       </header>
 
       {/* Mobile Menu Dropdown (Detached Island) */}
@@ -103,7 +114,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity:  1, y: 0, scale: 1 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             className="fixed top-24 left-4 right-4 z-40 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 overflow-hidden md:hidden"
@@ -115,7 +126,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
                   onClick={() => handleNavClick(item.view)}
                   className={`
                     w-full text-left p-4 rounded-xl text-sm font-medium transition-colors
-                    ${currentView === item.view ?  'bg-brand-50 text-brand-700 font-bold' : 'text-slate-600 hover:bg-slate-50'}
+                    ${currentView === item.view ? 'bg-brand-50 text-brand-700 font-bold' : 'text-slate-600 hover:bg-slate-50'}
                   `}
                 >
                   <div className="flex justify-between items-center">

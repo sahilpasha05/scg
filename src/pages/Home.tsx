@@ -28,7 +28,7 @@ interface HomeProps {
 }
 
 // WhatsApp Floating Button Component
-const WhatsAppButton:  React.FC = () => {
+const WhatsAppButton: React.FC = () => {
   const [showMessage, setShowMessage] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
   const fullText = "Click to Connect";
@@ -41,9 +41,9 @@ const WhatsAppButton:  React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (showMessage && displayedText. length < fullText.length) {
+    if (showMessage && displayedText.length < fullText.length) {
       const typingTimer = setTimeout(() => {
-        setDisplayedText(fullText. slice(0, displayedText.length + 1));
+        setDisplayedText(fullText.slice(0, displayedText.length + 1));
       }, 50);
       return () => clearTimeout(typingTimer);
     }
@@ -62,7 +62,7 @@ const WhatsAppButton:  React.FC = () => {
         {showMessage && (
           <motion.div
             initial={{ opacity: 0, x: 20, scale: 0.8 }}
-            animate={{ opacity:  1, x: 0, scale: 1 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 20, scale: 0.8 }}
             className="bg-white px-4 py-3 rounded-2xl shadow-xl border border-slate-200 max-w-[200px]"
           >
@@ -148,14 +148,14 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
     const testimonials = [];
     for (let i = 0; i < 3; i++) {
       const idx = (startIdx + i) % TESTIMONIALS.length;
-      testimonials.push({ ... TESTIMONIALS[idx], imageIdx: idx });
+      testimonials.push({ ...TESTIMONIALS[idx], imageIdx: idx });
     }
     return testimonials;
   };
 
   const handlePrevTestimonial = () => {
     setCurrentTestimonialIndex((prev) => 
-      prev === 0 ?  Math.ceil(TESTIMONIALS.length / 3) - 1 : prev - 1
+      prev === 0 ? Math.ceil(TESTIMONIALS.length / 3) - 1 : prev - 1
     );
   };
 
@@ -176,7 +176,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               src={HERO_IMAGES[currentImageIndex]}
               alt="Background"
               initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity:  1, scale: 1 }}
+              animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
               className="absolute inset-0 w-full h-full object-cover"
@@ -190,7 +190,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         <div className="container mx-auto px-4 md:px-6 relative z-20 flex flex-col items-center text-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity:  1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-5xl mx-auto flex flex-col items-center"
           >
@@ -200,11 +200,11 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
             <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-8 leading-[1.1]">
               Accounting & Compliance <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 to-white">Reimagined. </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 to-white">Reimagined.</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-              We replace chaos with clarity.  A tech-enabled, specialized companion exclusively for Resident Associations and Societies (RWAs).
+              We replace chaos with clarity. A tech-enabled, specialized companion exclusively for Resident Associations and Societies (RWAs).
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
@@ -249,7 +249,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
           
-          <div className="flex whitespace-nowrap animate-scroll hover:[animation-play-state: paused]">
+          <div className="flex whitespace-nowrap animate-scroll hover:[animation-play-state:paused]">
             {[...Array(2)].map((_, setIndex) => (
               <div key={setIndex} className="flex space-x-20 mx-10">
                 {clientLogos.map((logo, i) => (
@@ -259,7 +259,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   >
                     <img 
                       src={logo.src} 
-                      alt={logo. alt} 
+                      alt={logo.alt} 
                       className="h-16 w-auto max-w-[160px] object-contain transform group-hover:scale-110 transition-transform duration-500" 
                     />
                   </div>
@@ -278,7 +278,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           <div className="space-y-8">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white tracking-tight">
-                Why <span className="text-brand-400">Society Ledgers? </span>
+                Why <span className="text-brand-400">Society Ledgers?</span>
               </h2>
               <p className="text-slate-400 text-lg leading-relaxed">
                 We place ourselves as the back bone to the societies, and protect them from surprises caused by non-compliance or inadequate compliance.
@@ -289,7 +289,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               {STRENGTHS.map((strength, idx) => (
                 <div key={idx} className="group p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors duration-300">
                   <div className="mb-4 text-brand-400 group-hover:text-brand-300 transition-colors bg-brand-900/20 w-fit p-3 rounded-xl">
-                    {strength. icon}
+                    {strength.icon}
                   </div>
                   <h4 className="text-lg font-bold text-white mb-2">{strength.title}</h4>
                   <p className="text-slate-400 text-sm leading-relaxed">{strength.description}</p>
@@ -310,7 +310,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   <h3 className="text-2xl font-bold text-white">Our Commitment</h3>
                   <div className="w-12 h-12 flex items-center justify-center rounded-full bg-brand-500/20 text-brand-400">
                     <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                      <path d="M14. 017 21L14.017 18C14.017 16.896 14.389 15. 63 15.093 14.41C16.198 12.508 18.068 11.233 20.334 10.992V8H20.263C17.653 8 16.331 9.771 16.331 11.916V13H21. 085V21H14.017ZM6.678 21L6.678 18C6.678 16.896 7.051 15.63 7.755 14.41C8.86 12.508 10.73 11.233 12.996 10.992V8H12.925C10.315 8 8.993 9.771 8.993 11.916V13H13.747V21H6.678Z"/>
+                      <path d="M14.017 21L14.017 18C14.017 16.896 14.389 15.63 15.093 14.41C16.198 12.508 18.068 11.233 20.334 10.992V8H20.263C17.653 8 16.331 9.771 16.331 11.916V13H21.085V21H14.017ZM6.678 21L6.678 18C6.678 16.896 7.051 15.63 7.755 14.41C8.86 12.508 10.73 11.233 12.996 10.992V8H12.925C10.315 8 8.993 9.771 8.993 11.916V13H13.747V21H6.678Z"/>
                     </svg>
                   </div>
                 </div>
@@ -366,16 +366,16 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               <motion.div 
                 key={currentTestimonialIndex}
                 initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity:  1, x: 0 }}
+                animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
                 className="grid md:grid-cols-3 gap-6"
               >
                 {getVisibleTestimonials().map((t, i) => (
                   <div key={`${currentTestimonialIndex}-${i}`} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-                    {/* Profile First */}
+                    {/* Profile First - UPDATED SIZE */}
                     <div className="flex items-center gap-4 mb-6 border-b border-slate-50 pb-4">
-                      <div className="w-12 h-12 flex-shrink-0 rounded-full overflow-hidden border-2 border-brand-200">
+                      <div className="w-16 h-16 flex-shrink-0 rounded-full overflow-hidden border-2 border-brand-200">
                         <img 
                           src={profileImages[t.imageIdx]} 
                           alt={t.name}
@@ -401,7 +401,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   key={idx}
                   onClick={() => setCurrentTestimonialIndex(idx)}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    idx === currentTestimonialIndex ?  'bg-brand-600 w-8' : 'bg-slate-300'
+                    idx === currentTestimonialIndex ? 'bg-brand-600 w-8' : 'bg-slate-300'
                   }`}
                   aria-label={`Go to testimonial group ${idx + 1}`}
                 />
