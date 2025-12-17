@@ -3,34 +3,41 @@ import { SectionWrapper } from '../components/UI/SectionWrapper';
 import { TESTIMONIALS } from '../constants';
 import { motion } from 'framer-motion';
 
-export const Testimonials: React.FC = () => {
-  // Dummy profile images - replace with actual images later
+// Import testimonial images
+import satishRustagiImg from '../assets/SatishRustagiSenorita.jpeg';
+import preethiSubramanianImg from '../assets/PreethiSubramanianNVTLifesquare.jpeg';
+import anandAgrawalImg from '../assets/Anand Agrawal DSR Whitewaters.jpeg';
+import rajanBMImg from '../assets/Ranan BM Sobha Daffodil.jpg';
+import biplobDasImg from '../assets/BiplobDasManaForesta.jpg';
+import abhishekKumarImg from '../assets/AbhishekKumarMyGate.jpg';
+
+export const Testimonials: React. FC = () => {
+  // Profile images array matching the order in TESTIMONIALS
   const profileImages = [
-    "src/assets/SatishRustagiSenorita.jpeg",
-    "src/assets/PreethiSubramanianNVTLifesquare.jpeg",
-    "src/assets/Anand Agrawal DSR Whitewaters.jpeg",
-    "src/assets/Ranan BM Sobha Daffodil.jpg",
-    "src/assets/BiplobDasManaForesta.jpg",
-    "src/assets/AbhishekKumarMyGate.jpg"
+    satishRustagiImg,
+    preethiSubramanianImg,
+    anandAgrawalImg,
+    rajanBMImg,
+    biplobDasImg,
+    abhishekKumarImg
   ];
 
   return (
     <div className="pt-20">
       <SectionWrapper background="dark">
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-brand-900/50 backdrop-blur-sm text-brand-200 text-xs font-semibold mb-6 border border-brand-500/30">
+          <div className="inline-block px-4 py-1. 5 rounded-full bg-brand-900/50 backdrop-blur-sm text-brand-200 text-xs font-semibold mb-6 border border-brand-500/30">
               Trusted by Leading Societies
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Testimonials</h1>
           <p className="text-xl text-slate-300">
-            Experiences of some of the Societies that we serve, and affiliations that we have... 
+            Experiences of some of the Societies that we serve, and affiliations that we have...  
           </p>
         </div>
       </SectionWrapper>
 
       <div className="bg-slate-50 py-24 min-h-screen">
         <div className="container mx-auto px-4 md:px-6">
-           {/* Changed lg:grid-cols-3 to lg:grid-cols-2 for better balance with 4 long testimonials */}
            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {TESTIMONIALS.map((t, i) => (
                   <motion.div 

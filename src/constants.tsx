@@ -133,28 +133,28 @@ export const TEAM: TeamMember[] = [
     name: "CA Arvind K.  Agrawal",
     role: "Chief Mentor",
     qualification: "FCA",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
+    image: "src/assets/ArvindKrAgarwal.jpg",
     bio: "Mr. Arvind Kumar Agrawal is a Fellow Member of the Institute of Chartered Accountants of India.  Before completing his CA in 1990, he had a strong academic record.  He is also a Chartered Trust and Estate Planner certified by the American Academy of Financial Management, USA. He carries rich experience in finance processes, audit, Income Tax, and GST consulting and is passionate about IT-enabled enhancements in professional practice."
   },
   {
     name: "CA Anoop K. Agrawal",
     role: "Principal Consultant (Operations)",
     qualification: "FCA",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
+    image: "src/assets/AnoopOnline Copy.jpg",
     bio: "Mr.  Anoop Kumar Agrawal has been a Fellow Member of the Institute of Chartered Accountants of India since 2000. He provides professional services including audit, management consultancy, tax consultancy, accounting services, statutory compliance consulting, and secretarial services.  Prior to starting his CA practice in 2012, he worked on financial process review and improvement projects for domestic and international companies."
   },
   {
     name: "Mr. Kunal Maheshwari",
     role: "Principal Consultant (Technology)",
     qualification: "M.Tech (IIT Madras)",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
+    image: "src/assets/KunalMaheshwari.jpeg",
     bio: "Kunal Maheshwari is an AI consultant and serial entrepreneur with over 20 years of engineering leadership experience. An IIT Madras graduate, he has built and scaled products, teams, and businesses, including the All Is Well App."
   },
   {
     name: "Mr. Pavan Gururaj Bhardwaj",
     role: "Industry Advisor",
     qualification: "Industry Advisor",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+    image: "src/assets/PavanGururajBharadwaj.jpg",
     bio: "Pavan Bhardwaj is an entrepreneur and founder of Esteem Enterprises, providing Power, Solar, Water, and Home Automation solutions.  He served two terms as Founder President of his apartment association in Hoodi (Bengaluru) and is an Assistant Chief Traffic Warden with the BCP Traffic Warden Organisation."
   }
 ];
