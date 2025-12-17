@@ -44,7 +44,7 @@ export const Contact: React.FC = () => {
             <div>
                 <h1 className="text-4xl font-bold text-slate-900 mb-6">Let's Talk Compliance</h1>
                 <p className="text-lg text-slate-600 mb-10">
-                    Get in touch with us to schedule a free initial consultation for your society.
+                    Get in touch with your Accounting & Compliance Companion
                 </p>
                 
                 <div className="space-y-8">
@@ -55,6 +55,7 @@ export const Contact: React.FC = () => {
                         <div>
                             <h4 className="font-bold text-slate-900">Our Office</h4>
                             <p className="text-slate-600 mt-1">
+                                LedgerWorks Private Limited<br />
                                 # 134, Krishnappa Layout,<br />
                                 Doddakannelli, Sarjapur Road,<br />
                                 Bengaluru–560035
@@ -75,7 +76,7 @@ export const Contact: React.FC = () => {
                                 <Phone size={18} />
                                 +91 90369 40860
                             </a>
-                            <p className="text-xs text-slate-400 mt-2">Mon-Fri, 10am - 6pm</p>
+                            <p className="text-xs text-slate-400 mt-2">Mon-Sat, 10am - 6pm</p>
                         </div>
                     </div>
 
@@ -107,7 +108,6 @@ export const Contact: React.FC = () => {
                                 name="name"
                                 required
                                 className="w-full px-4 py-3 rounded-lg border border-slate-300 focus: ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all" 
-                                placeholder="John Doe" 
                             />
                         </div>
                         <div>
@@ -121,7 +121,6 @@ export const Contact: React.FC = () => {
                                     name="mobile"
                                     required
                                     className="w-full px-4 py-3 rounded-r-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all" 
-                                    placeholder="98765 43210" 
                                     maxLength={10}
                                     pattern="[0-9]{10}"
                                 />
@@ -136,7 +135,6 @@ export const Contact: React.FC = () => {
                             name="email"
                             required
                             className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all" 
-                            placeholder="john@example.com" 
                         />
                     </div>
 
@@ -146,8 +144,7 @@ export const Contact: React.FC = () => {
                             rows={4} 
                             name="message"
                             required
-                            className="w-full px-4 py-3 rounded-lg border border-slate-300 focus: ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all" 
-                            placeholder="How can we help you?"
+                            className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all" 
                         ></textarea>
                     </div>
 
@@ -157,7 +154,7 @@ export const Contact: React.FC = () => {
                         className={`w-full font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-2 ${
                             isSubmitted 
                                 ?  'bg-green-600 text-white' 
-                                :  'bg-brand-600 text-white hover:bg-brand-700'
+                                : 'bg-brand-600 text-white hover:bg-brand-700'
                         } ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
                     >
                         {isSubmitted ?  (
@@ -169,7 +166,7 @@ export const Contact: React.FC = () => {
                             'Sending.. .'
                         ) : (
                             <>
-                                Get Compliance Support <Send size={18} />
+                                Submit <Send size={18} />
                             </>
                         )}
                     </button>

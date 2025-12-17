@@ -4,14 +4,14 @@ import { SectionWrapper } from '../components/UI/SectionWrapper';
 import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export const Services: React.FC = () => {
+export const Services:  React.FC = () => {
   return (
     <div className="pt-20">
       <SectionWrapper background="dark">
          <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Services</h1>
             <p className="text-xl text-slate-300">
-                Comprehensive financial and legal solutions designed specifically for the unique needs of Residential Welfare Associations.
+                Comprehensive accounting and compliance solutions designed specifically for the unique regulatory needs of Resident Welfare Associations. 
             </p>
          </div>
       </SectionWrapper>
@@ -19,7 +19,7 @@ export const Services: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 py-20">
         <div className="flex flex-col gap-24">
             {SERVICES.map((service, idx) => (
-                <motion.div 
+                <motion. div 
                   key={idx}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ export const Services: React.FC = () => {
                            />
                            {/* Icon Overlay */}
                            <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm p-3 rounded-xl text-brand-600 shadow-md">
-                              {React.cloneElement(service.icon as React.ReactElement<any>, { size: 24 })}
+                              {React.cloneElement(service.icon as React. ReactElement<any>, { size:  24 })}
                            </div>
                         </div>
                     </div>

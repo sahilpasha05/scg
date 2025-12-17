@@ -17,7 +17,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    window. addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -44,7 +44,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
             shadow-xl shadow-slate-900/5
             backdrop-blur-xl
             transition-all duration-300
-            ${isScrolled || isMobileMenuOpen ? 'bg-white/90 w-full max-w-5xl' : 'bg-white/70 w-full max-w-4xl hover:bg-white/90'}
+            ${isScrolled || isMobileMenuOpen ? 'bg-white/90 w-full max-w-7xl' : 'bg-white/70 w-full max-w-6xl hover:bg-white/90'}
           `}
         >
           {/* Logo Section */}
@@ -70,7 +70,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
                   px-4 py-1. 5 rounded-full text-xs font-medium transition-all duration-300
                   ${currentView === item. view 
                     ? 'bg-white text-brand-600 shadow-sm font-semibold' 
-                    :  'text-slate-600 hover:text-slate-900 hover:bg-white/50'}
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'}
                 `}
               >
                 {item.label}
@@ -81,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
           {/* Actions & Mobile Toggle */}
           <div className="flex items-center gap-2 pl-4">
             <button 
-              onClick={() => handleNavClick(PageView. CONTACT)}
+              onClick={() => handleNavClick(PageView.CONTACT)}
               className="hidden md:flex items-center gap-2 bg-slate-900 hover:bg-brand-600 text-white px-5 py-2.5 rounded-full text-xs font-bold transition-all hover:shadow-lg hover:shadow-brand-500/25 active:scale-95"
             >
               Get Expert Help
@@ -103,7 +103,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
+            animate={{ opacity:  1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
             className="fixed top-24 left-4 right-4 z-40 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 overflow-hidden md:hidden"
@@ -132,7 +132,7 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
                 Get Expert Help <ArrowRight size={14} />
               </button>
             </div>
-          </motion. div>
+          </motion.div>
         )}
       </AnimatePresence>
     </>

@@ -11,7 +11,7 @@ export const CoreStrengths: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Core Strengths</h1>
             <p className="text-xl text-slate-300 leading-relaxed">
-                At <span className="text-white font-semibold">Society Ledgers</span>, we specialize in simplifying accounting and compliance for Resident Associations across India. Our platform combines domain expertise with digital convenience, helping societies stay compliant, transparent, and financially healthy—without the typical administrative burden.
+                At <span className="text-white font-semibold">Society Ledgers</span>, we specialize in simplifying accounting and compliance for Resident Associations.  Our platform combines domain expertise with digital convenience, helping societies stay compliant, transparent, and financially healthy—without the typical administrative burden.
             </p>
         </div>
       </SectionWrapper>
@@ -42,8 +42,8 @@ export const CoreStrengths: React.FC = () => {
             <motion.div 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6 }}
+                viewport={{ once:  true }}
+                transition={{ delay:  0.6 }}
                 className="mt-20 text-center"
             >
                 <div className="inline-flex items-center gap-3 bg-white px-8 py-4 rounded-full shadow-lg border border-slate-100">

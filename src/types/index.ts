@@ -30,19 +30,19 @@ export interface ServiceItem {
   title: string;
   description: string;
   icon: ReactNode;
-  image?:  string;
+  image?: string;
 }
 
 export interface Testimonial {
-  name: string;
-  role: string;
+  name:  string;
+  role?:  string;  // ← Changed from 'role:  string;' to 'role?: string;'
   societyName: string;
-  units?:  number;
+  units?: number;
   content: string;
 }
 
 export interface StrengthItem {
   title: string;
   description: string;
-  icon: ReactNode;
+  icon:  ReactNode;
 }

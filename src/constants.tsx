@@ -17,12 +17,12 @@ import {
 import { type NavItem, PageView, type ServiceItem, type StrengthItem, type TeamMember, type Testimonial } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', view: PageView.HOME },
+  { label: 'Home', view: PageView. HOME },
   { label: 'About Us', view: PageView.ABOUT },
   { label: 'Services', view: PageView. SERVICES },
-  { label: 'Core Strengths', view:  PageView.CORE_STRENGTHS },
-  { label: 'Team', view: PageView. TEAM },
-  { label:  'Testimonials', view:  PageView.TESTIMONIALS },
+  { label: 'Core Strengths', view: PageView. CORE_STRENGTHS },
+  { label: 'Team', view: PageView.TEAM },
+  { label: 'Testimonials', view: PageView.TESTIMONIALS },
   { label: 'Contact', view: PageView.CONTACT },
 ];
 
@@ -75,17 +75,17 @@ export const SERVICES:  ServiceItem[] = [
 export const STRENGTHS: StrengthItem[] = [
   {
     title: "Niche Expertise",
-    description: "We don't do everything. We specialize exclusively in Housing Societies & RWAs.",
+    description:  "We don't do everything. We specialize exclusively in Housing Societies & RWAs.",
     icon: <ShieldCheck className="w-6 h-6 text-brand-600" />
   },
   {
-    title: "Tech-Led Efficiency",
-    description: "Seamless integration with platforms like MyGate and cloud-based accounting tools.",
+    title: "Tech Enabled Processes",
+    description: "Our in-house communication engine to facilitate seamless communication.",
     icon: <Zap className="w-6 h-6 text-brand-600" />
   },
   {
-    title: "Timely Reporting",
-    description: "Monthly MIS and financial snapshots delivered on time, every time.",
+    title: "Real Time Accounting",
+    description: "Near real time completion of accounting tasks to enable updated snapshot of financials at any time.",
     icon: <Clock className="w-6 h-6 text-brand-600" />
   },
   {
@@ -107,13 +107,13 @@ export const DETAILED_STRENGTHS: StrengthItem[] = [
     icon: <ShieldCheck className="w-8 h-8" />
   },
   {
-    title:  "Technology-Led Efficiency",
+    title: "Technology-Led Efficiency",
     description: "Our in-house communication engine makes it easy to share documents, track progress, and access reports through a secure digital interface.  These technology-driven processes save time, eliminate paperwork chaos, and maintain a complete digital audit trail.",
     icon: <Zap className="w-8 h-8" />
   },
   {
     title: "End-to-End Support",
-    description: "We manage everything from day-to-day bookkeeping, invoice raising, expense recording, and bank reconciliation to GST compliance, TDS compliance, annual accounts finalization, audit coordination, and advisory services.  Think of us as your virtual finance office—ready when you need it.",
+    description: "We manage everything from day-to-day bookkeeping, invoice raising, expense recording, and bank reconciliation to GST compliance, TDS compliance, annual accounts finalization, audit coordination, and advisory services. Think of us as your virtual finance office—ready when you need it.",
     icon: <Layers className="w-8 h-8" />
   },
   {
@@ -141,7 +141,7 @@ export const TEAM: TeamMember[] = [
     role: "Principal Consultant (Operations)",
     qualification: "FCA",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
-    bio: "Mr.  Anoop Kumar Agrawal has been a Fellow Member of the Institute of Chartered Accountants of India since 2000. He provides professional services including audit, management consultancy, tax consultancy, accounting services, statutory compliance consulting, and secretarial services. Prior to starting his CA practice in 2012, he worked on financial process review and improvement projects for domestic and international companies."
+    bio: "Mr.  Anoop Kumar Agrawal has been a Fellow Member of the Institute of Chartered Accountants of India since 2000. He provides professional services including audit, management consultancy, tax consultancy, accounting services, statutory compliance consulting, and secretarial services.  Prior to starting his CA practice in 2012, he worked on financial process review and improvement projects for domestic and international companies."
   },
   {
     name: "Mr. Kunal Maheshwari",
@@ -155,36 +155,45 @@ export const TEAM: TeamMember[] = [
     role: "Industry Advisor",
     qualification: "Industry Advisor",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
-    bio: "Pavan Bhardwaj is an entrepreneur and founder of Esteem Enterprises, providing Power, Solar, Water, and Home Automation solutions. He served two terms as Founder President of his apartment association in Hoodi (Bengaluru) and is an Assistant Chief Traffic Warden with the BCP Traffic Warden Organisation."
+    bio: "Pavan Bhardwaj is an entrepreneur and founder of Esteem Enterprises, providing Power, Solar, Water, and Home Automation solutions.  He served two terms as Founder President of his apartment association in Hoodi (Bengaluru) and is an Assistant Chief Traffic Warden with the BCP Traffic Warden Organisation."
   }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Mr. Satish Rustagi",
-    role: "Management Committee",
-    societyName: "Sattva Senorita Apartments",
-    units: 423,
-    content: "The team at Society Ledgers don't just handle the accounts; they provide proactive advice that helps us make informed decisions. Their insights carry immense value.  For our 423-unit society, they completely transformed the way accounting was handled and brought in significant process improvements and compliance rigor, with complete process ownership. We have thoroughly enjoyed our association with them for over 5 years."
+    name:  "Mr. Satish Rustagi",
+    societyName:  "Sattva Senorita Apartments",
+    units:  423,
+    content: "The team at Society Ledgers don't just handle the accounts; they provide proactive advice that helps us make informed decisions. Their insights carry immense value.  For our 423-unit society, they completely transformed the way accounting was handled and brought in significant process improvements and compliance rigor, with complete process ownership.  We have thoroughly enjoyed our association with them for over 5 years."
   },
   {
     name: "Mrs. Preethi Subramanian",
-    role: "Management Committee",
-    societyName:  "NVT LifeSquare Villas",
+    societyName: "NVT LifeSquare Villas",
     units: 65,
-    content: "Though we are a small association with only 65 villa units, the Society Ledgers team streamlined our accounting processes and advised us to migrate from Tally to MyGate for real-time visibility of accounts and elimination of data duplication. They planned and executed the migration meticulously and identified compliance gaps in our earlier setup, providing appropriate solutions.  We are very happy with our association with them for accounting and compliance services."
+    content: "Though we are a small association with only 65 villa units, the Society Ledgers team streamlined our accounting processes and advised us to migrate from Tally to MyGate for real-time visibility of accounts and elimination of data duplication.  They planned and executed the migration meticulously and identified compliance gaps in our earlier setup, providing appropriate solutions. We are very happy with our association with them for accounting and compliance services."
   },
   {
     name: "Mr. Anand Agrawal",
-    role: "Management Committee",
-    societyName: "DSR Whitewaters",
-    units: 400,
-    content: "As an RWA of 400+ units, we feel fortunate to have engaged Society Ledgers.  From the early stages, their value addition was evident.  They identified an important GST compliance gap and helped us correct it through detailed data analysis and corrective measures. Their depth of knowledge and experience in RWA compliance matters is truly commendable."
+    societyName:  "DSR Whitewaters",
+    units: 412,
+    content: "As an RWA of 400+ units, we feel fortunate to have engaged Society Ledgers. From the early stages, their value addition was evident. They identified an important GST compliance gap and helped us correct it through detailed data analysis and corrective measures. Their depth of knowledge and experience in RWA compliance matters is truly commendable."
   },
   {
-    name: "Mr. B. M. Rajan",
-    role: "Management Committee",
+    name:  "Mr. B. M.  Rajan",
     societyName: "Sobha Daffodil Condominiums",
-    content: "In our 7 years of association with Society Ledgers, we have been impressed with their compliance-oriented approach, responsiveness, and accuracy. Their proactive working style ensures we rarely need to follow up on accounting or compliance matters. They transitioned us from periodic accounting to real-time accounting, significantly improving compliance levels and stakeholder satisfaction.  Their processes also helped us identify non-compliant vendors, enabling corrective actions.  We look forward to a long-term association with them."
+    units: 432,
+    content: "In our 7 years of association with Society Ledgers, we have been impressed with their compliance-oriented approach, responsiveness, and accuracy. Their proactive working style ensures we rarely need to follow up on accounting or compliance matters. They transitioned us from periodic accounting to real-time accounting, significantly improving compliance levels and stakeholder satisfaction. Their processes also helped us identify non-compliant vendors, enabling corrective actions. We look forward to a long-term association with them."
+  },
+  {
+    name: "Mr. Biplob Das",
+    societyName:  "Mana Foresta",
+    units: 580,
+    content: "Working with Society Ledgers has been a game-changer for our large community. Their systematic approach to compliance and transparent reporting has built tremendous trust among our residents."
+  },
+  {
+    name:  "Mr. Abhishek Kumar",
+    societyName: "DSR Sunrise Towers",
+    units: 320,
+    content: "The professionalism and expertise of Society Ledgers team is exceptional. They have simplified our complex accounting requirements and made compliance stress-free for our management committee."
   }
 ];

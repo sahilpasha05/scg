@@ -1,9 +1,9 @@
 import React from 'react';
 import { SectionWrapper } from '../components/UI/SectionWrapper';
 import { motion } from 'framer-motion';
-import { Building2, FileText, CheckCircle, Scale, Headphones, Handshake } from 'lucide-react';
+import { Building2, FileText, CheckCircle, Headphones, Handshake } from 'lucide-react';
 
-export const About: React.FC = () => {
+export const About:  React.FC = () => {
   return (
     <div className="pt-20">
       {/* Intro Section */}
@@ -12,15 +12,15 @@ export const About: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8">About Society Ledgers</h1>
           
           <p className="text-xl text-slate-700 leading-relaxed mb-8">
-             Society Ledgers is a dedicated team of accountants, tax consultants, and compliance professionals with extensive experience working with housing societies, apartment associations, and residential complexes.
+             Society Ledgers is a dedicated team of accountants, tax consultants, and compliance professionals with extensive experience working with housing societies, apartment associations, and residential complexes. 
           </p>
           
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-left mb-10">
              <p className="text-slate-600 leading-relaxed mb-6 text-lg">
-                With a strong understanding of the <span className="font-semibold text-slate-900">Societies Acts, Model Bye-Laws, Income Tax, and GST</span> provisions applicable to housing societies, we deliver services that are accurate, timely, and aligned with each society’s specific legal framework.
+                With a strong understanding of the <span className="font-semibold text-slate-900">Societies Acts, Model Bye-Laws, Income Tax, and GST</span> provisions applicable to housing societies, we deliver services that are accurate, timely, and aligned with each society's specific legal framework.
              </p>
              <p className="text-slate-800 leading-relaxed font-medium text-lg border-l-4 border-brand-500 pl-4">
-                We don’t just manage numbers — we help housing societies build transparent, compliant, and smoothly functioning communities.
+                We don't just manage numbers — we help housing societies build transparent, compliant, and smoothly functioning communities. 
              </p>
           </div>
           
@@ -59,7 +59,7 @@ export const About: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Transparent, Member-Friendly Reporting</h3>
                 <p className="text-slate-600 leading-relaxed flex-grow">
-                    We create clear financial reports and member statements that increase trust and transparency within the society. No jargon, just clarity.
+                    We create clear financial reports and member statements that increase trust and transparency within the society.  No jargon, just clarity.
                 </p>
              </motion.div>
 
@@ -81,7 +81,7 @@ export const About: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Personalized & Prompt Support</h3>
                 <p className="text-slate-600 leading-relaxed flex-grow">
-                    Whether your society has 20 flats or 1000+, we tailor our services to fit your needs. Prompt service is our promise.
+                    Whether your society has 20 flats or 1000+, we tailor our services to fit your needs.  Prompt service is our promise. 
                 </p>
              </motion.div>
 
@@ -92,9 +92,9 @@ export const About: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Strategic Participation & Advisory</h3>
                 <p className="text-slate-600 leading-relaxed flex-grow">
-                    We extend our active participation in formulating key policies and enabling key decisions, helping positively influence the finances and governance of the Association. We are more than just accountants; we are your strategic partners.
+                    We extend our active participation in formulating key policies and enabling key decisions, helping positively influence the finances and governance of the Association.  We are more than just accountants; we are your strategic partners.
                 </p>
-             </motion.div>
+             </motion. div>
          </div>
       </SectionWrapper>
 
@@ -108,42 +108,6 @@ export const About: React.FC = () => {
                 </p>
             </div>
          </div>
-      </SectionWrapper>
-
-      {/* Expertise List */}
-      <SectionWrapper background="light">
-        <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-slate-900 mb-4">Expertise in Society Regulations</h2>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-4">
-                {[
-                    "Co-operative Societies Act",
-                    "Model Bye-Laws & Regulations",
-                    "Income Tax Act (Society-specific provisions)",
-                    "GST for Housing Societies",
-                    "Registrar of Societies Compliance",
-                    "Society Accounting Standards",
-                    "AGM & Committee Governance",
-                    "Financial Planning for Societies"
-                ].map((item, idx) => (
-                    <motion.div 
-                        key={idx}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.05 }}
-                        className="flex items-center gap-4 p-4 bg-white rounded-lg border border-slate-200 hover:border-brand-200 hover:shadow-md transition-all"
-                    >
-                        <div className="flex-shrink-0 text-brand-600">
-                            <Scale size={20} />
-                        </div>
-                        <span className="font-medium text-slate-800">{item}</span>
-                    </motion.div>
-                ))}
-            </div>
-        </div>
       </SectionWrapper>
     </div>
   );

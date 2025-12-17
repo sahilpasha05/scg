@@ -2,9 +2,18 @@ import React from 'react';
 import { SectionWrapper } from '../components/UI/SectionWrapper';
 import { TESTIMONIALS } from '../constants';
 import { motion } from 'framer-motion';
-import { Quote } from 'lucide-react';
 
 export const Testimonials: React.FC = () => {
+  // Dummy profile images - replace with actual images later
+  const profileImages = [
+    "src/assets/SatishRustagiSenorita.jpeg",
+    "src/assets/PreethiSubramanianNVTLifesquare.jpeg",
+    "src/assets/Anand Agrawal DSR Whitewaters.jpeg",
+    "src/assets/Ranan BM Sobha Daffodil.jpg",
+    "src/assets/BiplobDasManaForesta.jpg",
+    "src/assets/AbhishekKumarMyGate.jpg"
+  ];
+
   return (
     <div className="pt-20">
       <SectionWrapper background="dark">
@@ -14,7 +23,7 @@ export const Testimonials: React.FC = () => {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Testimonials</h1>
           <p className="text-xl text-slate-300">
-            Read what Management Committees and Resident Welfare Associations have to say about working with Society Ledgers.
+            Experiences of some of the Societies that we serve, and affiliations that we have... 
           </p>
         </div>
       </SectionWrapper>
@@ -34,33 +43,30 @@ export const Testimonials: React.FC = () => {
                   >
                       {/* Profile Header */}
                       <div className="flex items-start gap-4 mb-6 border-b border-slate-50 pb-6">
-                          <div className="w-14 h-14 flex-shrink-0 bg-gradient-to-br from-brand-100 to-blue-200 rounded-full flex items-center justify-center text-brand-700 font-bold text-xl">
-                              {t.name.charAt(0)}
+                          <div className="w-14 h-14 flex-shrink-0 rounded-full overflow-hidden border-2 border-brand-200">
+                              <img 
+                                src={profileImages[i % profileImages.length]} 
+                                alt={t.name}
+                                className="w-full h-full object-cover"
+                              />
                           </div>
                           <div>
                               <p className="font-bold text-slate-900 text-lg leading-tight">{t.name}</p>
-                              <p className="text-sm text-slate-500 font-medium mb-1">{t.societyName}</p>
-                              <div className="flex items-center gap-2">
-                                 {t.role && <span className="text-xs text-brand-600 font-semibold bg-brand-50 px-2 py-0.5 rounded-md">{t.role}</span>}
-                                 {t.units && <span className="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">{t.units} Units</span>}
-                              </div>
+                              <p className="text-sm text-slate-500 font-medium mb-1">
+                                {t.societyName}
+                                {t.units && <span className="text-slate-400"> • {t.units} Units</span>}
+                              </p>
                           </div>
                       </div>
                       
                       {/* Content */}
                       <div className="relative flex-grow">
-                        <Quote className="text-brand-100 w-12 h-12 absolute -top-4 -left-2 opacity-50 pointer-events-none" />
-                        <p className="text-slate-600 leading-relaxed italic relative z-10 pl-4 border-l-2 border-brand-100">
+                        <p className="text-slate-600 leading-relaxed">
                           "{t.content}"
                         </p>
                       </div>
                   </motion.div>
               ))}
-           </div>
-
-           <div className="mt-20 text-center">
-              <p className="text-slate-500 text-sm mb-4">Have you worked with us?</p>
-              <a href="mailto:feedback@societyledgers.com" className="text-brand-600 font-bold hover:underline">Share your feedback</a>
            </div>
         </div>
       </div>
