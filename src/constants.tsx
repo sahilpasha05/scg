@@ -83,7 +83,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Budgeting & Financial Advisory",
     description: "Preparation of annual budgets, reserve fund analysis, and strategic financial planning to ensure long-term sustainability.",
     icon: <TrendingUp className="w-10 h-10" />,
-    image: "src/assets/unnamed (2).jpg"
+    image: "https://raw.githubusercontent.com/sahilpasha05/scg/refs/heads/main/src/assets/unnamed(2).jpg"
   }
 ];
 
