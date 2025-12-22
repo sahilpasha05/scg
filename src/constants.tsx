@@ -77,7 +77,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Registrar & Legal Compliance",
     description: "Assistance with annual returns to the Registrar of Cooperative Societies, AGM/GBM documentation, resolution filing, and more.",
     icon: <Gavel className="w-10 h-10" />,
-    image:  "src/assets/unnamed (1).jpg"
+    image:  "src/assets/unnamed(1).jpg"
   },
   {
     title: "Budgeting & Financial Advisory",
