@@ -6,7 +6,8 @@ export const PageView = {
   SERVICES: 'SERVICES',
   CORE_STRENGTHS: 'CORE_STRENGTHS',
   TEAM: 'TEAM',
-  TESTIMONIALS: 'TESTIMONIALS',
+  TESTIMONIALS:  'TESTIMONIALS',
+  CAREERS: 'CAREERS',
   CONTACT: 'CONTACT',
   PRIVACY: 'PRIVACY'
 } as const;
@@ -23,7 +24,7 @@ export interface TeamMember {
   role: string;
   qualification: string;
   image: string;
-  bio?:  string;
+  bio?: string;
 }
 
 export interface ServiceItem {
@@ -34,8 +35,8 @@ export interface ServiceItem {
 }
 
 export interface Testimonial {
-  name:  string;
-  role?:  string;  // ← Changed from 'role:  string;' to 'role?: string;'
+  name: string;
+  role?: string;
   societyName: string;
   units?: number;
   content: string;
