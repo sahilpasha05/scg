@@ -2,26 +2,30 @@ import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { PageView } from '../../types';
 
+// Import logo - SAME AS HEADER
+import logo from '../../assets/Society Ledgers Logo2.jpg';
+
 interface FooterProps {
-  onNavigate: (view: PageView) => void;
+  onNavigate:  (view: PageView) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+export const Footer:  React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-slate-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           
-          {/* Brand Column */}
-          <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="bg-white text-brand-900 w-10 h-10 flex items-center justify-center rounded-lg font-bold text-lg tracking-tight shadow-md">
-                SL
-              </div>
-              <span className="font-bold text-xl">Society Ledgers</span>
+          {/* Brand Column - LOGO ONLY */}
+          <div className="col-span-1 md: col-span-1">
+            <div className="mb-6">
+              <img 
+                src={logo} 
+                alt="Society Ledgers Logo"
+                className="h-14 w-auto object-contain drop-shadow-lg rounded-lg"
+              />
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              We support every partner society like a backbone on all accounting and tax compliance matters.
+            <p className="text-slate-300 text-base leading-relaxed mb-6 font-medium">
+              We support every partner society like a backbone on all accounting and tax compliance matters. 
             </p>
           </div>
 
@@ -30,9 +34,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <h4 className="font-semibold text-lg mb-6 text-brand-100">Quick Links</h4>
             <ul className="space-y-3 text-sm text-slate-400">
               <li><button onClick={() => onNavigate(PageView.ABOUT)} className="hover:text-white transition-colors">About Us</button></li>
-              <li><button onClick={() => onNavigate(PageView.SERVICES)} className="hover:text-white transition-colors">Our Services</button></li>
-              <li><button onClick={() => onNavigate(PageView. TEAM)} className="hover:text-white transition-colors">Our Team</button></li>
+              <li><button onClick={() => onNavigate(PageView. SERVICES)} className="hover:text-white transition-colors">Our Services</button></li>
+              <li><button onClick={() => onNavigate(PageView.TEAM)} className="hover:text-white transition-colors">Our Team</button></li>
               <li><button onClick={() => onNavigate(PageView.TESTIMONIALS)} className="hover:text-white transition-colors">Testimonials</button></li>
+              <li><button onClick={() => onNavigate(PageView.CAREERS)} className="hover:text-white transition-colors">Careers</button></li>
             </ul>
           </div>
 
@@ -67,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-brand-500 flex-shrink-0" />
-                <a href="mailto:admin@societyledgers.com" className="hover:text-white transition-colors">admin@societyledgers. com</a>
+                <a href="mailto: admin@societyledgers.com" className="hover:text-white transition-colors">admin@societyledgers.com</a>
               </li>
             </ul>
           </div>

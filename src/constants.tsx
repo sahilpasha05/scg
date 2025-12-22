@@ -9,10 +9,10 @@ import {
   Clock, 
   Zap, 
   Users,
+  Award,
   Layers,
   FileBarChart,
-  Lightbulb,
-  Award
+  Lightbulb
 } from 'lucide-react';
 import { type NavItem, PageView, type ServiceItem, type StrengthItem, type TeamMember, type Testimonial } from './types';
 
@@ -22,35 +22,44 @@ import anoopAgrawalImg from './assets/AnoopKrAgarwal.png';
 import kunalMaheshwariImg from './assets/KunalMaheshwari.jpeg';
 import pavanBhardwajImg from './assets/PavanGururajBharadwaj.jpg';
 
+// Import hero images
+import heroImg1 from './assets/Accounting1.jpg';
+import heroImg2 from './assets/Accounting4.jpg';
+import heroImg3 from './assets/g3JLQ6Dd.png';
+import heroImg4 from './assets/SocietyPic4.jpg';
+import heroImg5 from './assets/SocietyPic5.jpg';
+
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', view: PageView. HOME },
-  { label: 'About Us', view: PageView.ABOUT },
+  { label: 'Home', view: PageView.HOME },
+  { label: 'About Us', view:  PageView.ABOUT },
   { label: 'Services', view: PageView. SERVICES },
-  { label: 'Core Strengths', view: PageView. CORE_STRENGTHS },
-  { label: 'Team', view: PageView.TEAM },
-  { label: 'Testimonials', view: PageView. TESTIMONIALS },
-  { label: 'Contact', view: PageView.CONTACT },
+  { label:  'Core Strengths', view: PageView.CORE_STRENGTHS },
+  { label:  'Team', view: PageView.TEAM },
+  { label: 'Testimonials', view: PageView.TESTIMONIALS },
+  { label: 'Careers', view: PageView. CAREERS },
+  { label: 'Contact', view: PageView. CONTACT },
 ];
 
 export const HERO_IMAGES = [
-  "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1920",
-  "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1920",
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1920",
-  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1920"
+  heroImg1,
+  heroImg2,
+  heroImg3,
+  heroImg4,
+  heroImg5,
 ];
 
-export const SERVICES:   ServiceItem[] = [
+export const SERVICES: ServiceItem[] = [
   {
     title: "Society Accounting & Bookkeeping",
     description: "Preparation and maintenance of day to day accounts, ledgers, member wise billing, maintenance receipts, and year end financial statements.",
     icon: <BookOpen className="w-10 h-10" />,
-    image: "src/assets/hgvg.jpeg"
+    image: "src/assets/hgvg. jpeg"
   },
   {
     title: "Annual Audit & Reporting",
-    description: "Close coordination with statutory auditors, preparation of audit-ready accounts, and support for audit queries and observations.",
+    description:  "Close coordination with statutory auditors, preparation of audit-ready accounts, and support for audit queries and observations.",
     icon: <FileCheck className="w-10 h-10" />,
-    image:  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800&h=600"
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40? auto=format&fit=crop&q=80&w=800&h=600"
   },
   {
     title: "Income Tax Compliance",
@@ -62,13 +71,13 @@ export const SERVICES:   ServiceItem[] = [
     title: "GST Advisory & Filing",
     description: "Support with GST applicability on member as well as non-member income, preparation of returns, and compliance management.",
     icon: <Landmark className="w-10 h-10" />,
-    image:  "src/assets/Gemini_Generated_Image_8mups58mups58mup.png"
+    image: "src/assets/Gemini_Generated_Image_8mups58mups58mup. png"
   },
   {
     title: "Registrar & Legal Compliance",
     description: "Assistance with annual returns to the Registrar of Cooperative Societies, AGM/GBM documentation, resolution filing, and more.",
     icon: <Gavel className="w-10 h-10" />,
-    image: "src/assets/unnamed (1).jpg"
+    image:  "src/assets/unnamed (1).jpg"
   },
   {
     title: "Budgeting & Financial Advisory",
@@ -80,12 +89,12 @@ export const SERVICES:   ServiceItem[] = [
 
 export const STRENGTHS: StrengthItem[] = [
   {
-    title: "Niche Expertise",
-    description:  "We don't do everything. We specialize exclusively in Housing Societies & RWAs.",
+    title:  "Niche Expertise",
+    description:  "We don't do everything.  We specialize exclusively in Housing Societies & RWAs.",
     icon: <ShieldCheck className="w-6 h-6 text-brand-600" />
   },
   {
-    title: "Tech Enabled Processes",
+    title:  "Tech Enabled Processes",
     description: "Our in-house communication engine to facilitate seamless communication.",
     icon: <Zap className="w-6 h-6 text-brand-600" />
   },
@@ -101,57 +110,57 @@ export const STRENGTHS: StrengthItem[] = [
   }
 ];
 
-export const DETAILED_STRENGTHS: StrengthItem[] = [
+export const DETAILED_STRENGTHS:  StrengthItem[] = [
   {
     title: "Niche Expertise in Society Accounting",
-    description: "Unlike generic accounting firms, Society Ledgers is built specifically for housing societies.   We understand the nuances of registration, accounting, income tax matters, GST matters, annual returns, and audits for societies, and carry the expertise to handle all of them.",
+    description: "Unlike generic accounting firms, Society Ledgers is built specifically for housing societies.  We understand the nuances of registration, accounting, income tax matters, GST matters, annual returns, and audits for societies, and carry the expertise to handle all of them.",
     icon: <Award className="w-8 h-8" />
   },
   {
-    title: "100% Compliance-Driven Services",
-    description: "\"Keeping you compliant\" is our core service commitment. We ensure societies remain in good standing with government authorities and regulators.   Our structured workflows, standard operating procedures, and compliance calendars help prevent missed deadlines and downstream consequences.",
+    title:  "100% Compliance-Driven Services",
+    description: "Keeping you compliant is our core service commitment. We ensure societies remain in good standing with government authorities and regulators.  Our structured workflows, standard operating procedures, and compliance calendars help prevent missed deadlines and downstream consequences.",
     icon: <ShieldCheck className="w-8 h-8" />
   },
   {
     title: "Technology-Led Efficiency",
-    description: "Our in-house communication engine makes it easy to share documents, track progress, and access reports through a secure digital interface.   These technology-driven processes save time, eliminate paperwork chaos, and maintain a complete digital audit trail.",
+    description: "Our in-house communication engine makes it easy to share documents, track progress, and access reports through a secure digital interface. These technology-driven processes save time, eliminate paperwork chaos, and maintain a complete digital audit trail.",
     icon: <Zap className="w-8 h-8" />
   },
   {
     title: "End-to-End Support",
-    description: "We manage everything from day-to-day bookkeeping, invoice raising, expense recording, and bank reconciliation to GST compliance, TDS compliance, annual accounts finalization, audit coordination, and advisory services.  Think of us as your virtual finance office—ready when you need it.",
+    description: "We manage everything from day-to-day bookkeeping, invoice raising, expense recording, and bank reconciliation to GST compliance, TDS compliance, annual accounts finalization, audit coordination, and advisory services. Think of us as your virtual finance office—ready when you need it.",
     icon: <Layers className="w-8 h-8" />
   },
   {
     title: "Timely and Transparent Reporting",
-    description: "With Society Ledgers, there are no surprises. You receive well-structured statutory summaries and timely compliance updates, ensuring a high level of transparency, especially around regulatory matters.",
+    description: "With Society Ledgers, there are no surprises.  You receive well-structured statutory summaries and timely compliance updates, ensuring a high level of transparency, especially around regulatory matters.",
     icon: <FileBarChart className="w-8 h-8" />
   },
   {
     title: "Personalized Advisory",
-    description: "Small advice makes a big difference. With deep expertise in society accounting and compliance, we act as a trusted partner for advisory needs including vendor selection, project budgeting, fund raising, and complex compliance scenarios.",
+    description:  "Small advice makes a big difference.  With deep expertise in society accounting and compliance, we act as a trusted partner for advisory needs including vendor selection, project budgeting, fund raising, and complex compliance scenarios.",
     icon: <Lightbulb className="w-8 h-8" />
   }
 ];
 
 export const TEAM: TeamMember[] = [
   {
-    name: "CA Arvind K. Agrawal",
-    role: "Chief Mentor",
+    name:  "CA Arvind K.  Agrawal",
+    role:  "Chief Mentor",
     qualification: "FCA",
     image: arvindAgrawalImg,
-    bio: "Mr. Arvind Kumar Agrawal is a Fellow Member of the Institute of Chartered Accountants of India.   Before completing his CA in 1990, he had a strong academic record.   He is also a Chartered Trust and Estate Planner certified by the American Academy of Financial Management, USA.  He carries rich experience in finance processes, audit, Income Tax, and GST consulting and is passionate about IT-enabled enhancements in professional practice."
+    bio: "Mr.  Arvind Kumar Agrawal is a Fellow Member of the Institute of Chartered Accountants of India. Before completing his CA in 1990, he had a strong academic record.  He is also a Chartered Trust and Estate Planner certified by the American Academy of Financial Management, USA. He carries rich experience in finance processes, audit, Income Tax, and GST consulting and is passionate about IT-enabled enhancements in professional practice."
   },
   {
-    name: "CA Anoop K. Agrawal",
-    role: "Principal Consultant (Operations)",
+    name:  "CA Anoop K.  Agrawal",
+    role:  "Principal Consultant (Operations)",
     qualification: "FCA",
     image: anoopAgrawalImg,
-    bio: "Mr. Anoop Kumar Agrawal has been a Fellow Member of the Institute of Chartered Accountants of India since 2000.  He provides professional services including audit, management consultancy, tax consultancy, accounting services, statutory compliance consulting, and secretarial services. Prior to starting his CA practice in 2012, he worked on financial process review and improvement projects for domestic and international companies."
+    bio: "Mr. Anoop Kumar Agrawal has been a Fellow Member of the Institute of Chartered Accountants of India since 2000. He provides professional services including audit, management consultancy, tax consultancy, accounting services, statutory compliance consulting, and secretarial services. Prior to starting his CA practice in 2012, he worked on financial process review and improvement projects for domestic and international companies."
   },
   {
     name: "Mr. Kunal Maheshwari",
-    role:  "Principal Consultant (Technology)",
+    role: "Principal Consultant (Technology)",
     qualification: "M.Tech (IIT Madras)",
     image: kunalMaheshwariImg,
     bio: "Kunal Maheshwari is an AI consultant and serial entrepreneur with over 20 years of engineering leadership experience. An IIT Madras graduate, he has built and scaled products, teams, and businesses, including the All Is Well App."
@@ -165,39 +174,39 @@ export const TEAM: TeamMember[] = [
   }
 ];
 
-export const TESTIMONIALS: Testimonial[] = [
+export const TESTIMONIALS:  Testimonial[] = [
   {
-    name: "Mr. Satish Rustagi",
+    name: "Mr.  Satish Rustagi",
     societyName: "Sattva Senorita Apartments",
     units: 423,
-    content: "The team at Society Ledgers don't just handle the accounts; they provide proactive advice that helps us make informed decisions.  Their insights carry immense value.  For our 423-unit society, they completely transformed the way accounting was handled and brought in significant process improvements and compliance rigor, with complete process ownership.  We have thoroughly enjoyed our association with them for over 5 years."
+    content: "The team at Society Ledgers don't just handle the accounts; they provide proactive advice that helps us make informed decisions. Their insights carry immense value.  For our 423-unit society, they completely transformed the way accounting was handled and brought in significant process improvements and compliance rigor, with complete process ownership.  We have thoroughly enjoyed our association with them for over 5 years."
   },
   {
     name: "Mrs. Preethi Subramanian",
     societyName: "NVT LifeSquare Villas",
     units: 65,
-    content: "Though we are a small association with only 65 villa units, the Society Ledgers team streamlined our accounting processes and advised us to migrate from Tally to MyGate for real-time visibility of accounts and elimination of data duplication. They planned and executed the migration meticulously and identified compliance gaps in our earlier setup, providing appropriate solutions. We are very happy with our association with them for accounting and compliance services."
+    content: "Though we are a small association with only 65 villa units, the Society Ledgers team streamlined our accounting processes and advised us to migrate from Tally to MyGate for real-time visibility of accounts and elimination of data duplication.  They planned and executed the migration meticulously and identified compliance gaps in our earlier setup, providing appropriate solutions. We are very happy with our association with them for accounting and compliance services."
   },
   {
     name: "Mr. Anand Agrawal",
-    societyName: "DSR Whitewaters",
+    societyName:  "DSR Whitewaters",
     units: 412,
-    content: "As an RWA of 400+ units, we feel fortunate to have engaged Society Ledgers.  From the early stages, their value addition was evident.  They identified an important GST compliance gap and helped us correct it through detailed data analysis and corrective measures. Their depth of knowledge and experience in RWA compliance matters is truly commendable."
+    content: "As an RWA of 400+ units, we feel fortunate to have engaged Society Ledgers.  From the early stages, their value addition was evident. They identified an important GST compliance gap and helped us correct it through detailed data analysis and corrective measures.  Their depth of knowledge and experience in RWA compliance matters is truly commendable."
   },
   {
     name: "Mr. B. M. Rajan",
-    societyName:  "Sobha Daffodil Condominiums",
+    societyName: "Sobha Daffodil Condominiums",
     units: 432,
-    content: "In our 7 years of association with Society Ledgers, we have been impressed with their compliance-oriented approach, responsiveness, and accuracy. Their proactive working style ensures we rarely need to follow up on accounting or compliance matters. They transitioned us from periodic accounting to real-time accounting, significantly improving compliance levels and stakeholder satisfaction.  Their processes also helped us identify non-compliant vendors, enabling corrective actions.  We look forward to a long-term association with them."
+    content: "In our 7 years of association with Society Ledgers, we have been impressed with their compliance-oriented approach, responsiveness, and accuracy. Their proactive working style ensures we rarely need to follow up on accounting or compliance matters.  They transitioned us from periodic accounting to real-time accounting, significantly improving compliance levels and stakeholder satisfaction. Their processes also helped us identify non-compliant vendors, enabling corrective actions. We look forward to a long-term association with them."
   },
   {
-    name: "Mr. Biplob Das",
+    name: "Mr.  Biplob Das",
     societyName: "Mana Foresta",
-    units: 580,
+    units:  580,
     content: "Working with Society Ledgers has been a game-changer for our large community. Their systematic approach to compliance and transparent reporting has built tremendous trust among our residents."
   },
   {
-    name: "Mr. Abhishek Kumar",
+    name: "Mr.  Abhishek Kumar",
     societyName: "DSR Sunrise Towers",
     units: 320,
     content: "The professionalism and expertise of Society Ledgers team is exceptional. They have simplified our complex accounting requirements and made compliance stress-free for our management committee."

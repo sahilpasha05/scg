@@ -5,14 +5,14 @@ import { Building2, FileText, CheckCircle, Headphones, Handshake } from 'lucide-
 
 export const About:  React.FC = () => {
   return (
-    <div className="pt-20">
+    <div className="pt-32 pb-20">
       {/* Intro Section */}
       <SectionWrapper background="light">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8">About Society Ledgers</h1>
+          <h1 className="text-4xl md: text-5xl font-bold text-slate-900 mb-8">About Society Ledgers</h1>
           
           <p className="text-xl text-slate-700 leading-relaxed mb-8">
-             Society Ledgers is a dedicated team of accountants, tax consultants, and compliance professionals with extensive experience working with housing societies, apartment associations, and residential complexes. 
+             Society Ledgers is a dedicated team of accountants, tax consultants, and compliance professionals with extensive experience working with housing societies, apartment associations, and residential complexes.  
           </p>
           
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-left mb-10">
@@ -26,8 +26,7 @@ export const About:  React.FC = () => {
           
           {/* Official Partner */}
           <div className="inline-flex flex-col md:flex-row items-center justify-center bg-brand-50 border border-brand-100 px-8 py-6 rounded-xl gap-4">
-             <span className="bg-brand-600 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">A Trust base mutual collaboration
-</span>
+             <span className="bg-brand-600 text-white px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">A Trust based mutual collaboration</span>
              <p className="text-slate-700 font-medium text-center md:text-left">
                 As a recommended service provider of <span className="font-bold text-slate-900">MyGate</span>, Society Ledgers is recognized as an exclusive accounting and compliance platform for residential societies.
              </p>
@@ -48,7 +47,7 @@ export const About:  React.FC = () => {
                     <Building2 size={24} />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Focused Expertise in Housing Societies</h3>
-                <p className="text-slate-600 leading-relaxed flex-grow">
+                <p className="text-slate-600 leading-relaxed text-justify flex-grow">
                     We work <span className="font-semibold text-brand-600">exclusively with housing societies</span>. We understand your pain points, compliance deadlines, and governance issues better than anyone else.
                 </p>
              </motion.div>
@@ -59,19 +58,19 @@ export const About:  React.FC = () => {
                     <FileText size={24} />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Transparent, Member-Friendly Reporting</h3>
-                <p className="text-slate-600 leading-relaxed flex-grow">
+                <p className="text-slate-600 leading-relaxed text-justify flex-grow">
                     We create clear financial reports and member statements that increase trust and transparency within the society.  No jargon, just clarity.
                 </p>
              </motion.div>
 
              {/* Card 3 */}
-             <motion.div whileHover={{ y: -5 }} className="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full">
+             <motion. div whileHover={{ y:  -5 }} className="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full">
                 <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
                     <CheckCircle size={24} />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">End-to-End Compliance Support</h3>
-                <p className="text-slate-600 leading-relaxed flex-grow">
-                    From day-to-day bookkeeping to statutory filings and audit coordination — we manage it all under one roof so you don't have to coordinate with multiple vendors.
+                <p className="text-slate-600 leading-relaxed text-justify flex-grow">
+                    From day-to-day bookkeeping to statutory filings and audit coordination — we manage it all under one roof so you don't have to coordinate with multiple vendors. 
                 </p>
              </motion.div>
 
@@ -81,8 +80,8 @@ export const About:  React.FC = () => {
                     <Headphones size={24} />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Personalized & Prompt Support</h3>
-                <p className="text-slate-600 leading-relaxed flex-grow">
-                    Whether your society has 20 flats or 1000+, we tailor our services to fit your needs.  Prompt service is our promise. 
+                <p className="text-slate-600 leading-relaxed text-justify flex-grow">
+                    Whether your society has 20 flats or 1000+, we tailor our services to fit your needs.   Prompt service is our promise.  
                 </p>
              </motion.div>
 
@@ -92,10 +91,10 @@ export const About:  React.FC = () => {
                     <Handshake size={24} />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Strategic Participation & Advisory</h3>
-                <p className="text-slate-600 leading-relaxed flex-grow">
-                    We extend our active participation in formulating key policies and enabling key decisions, helping positively influence the finances and governance of the Association.  We are more than just accountants; we are your strategic partners.
+                <p className="text-slate-600 leading-relaxed text-justify flex-grow">
+                    We extend our active participation in formulating key policies and enabling key decisions, helping positively influence the finances and governance of the Association.  We are more than just accountants; we are your strategic partners. 
                 </p>
-             </motion. div>
+             </motion.  div>
          </div>
       </SectionWrapper>
 
@@ -103,9 +102,18 @@ export const About:  React.FC = () => {
       <SectionWrapper background="dark">
          <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-8">Our Commitment</h2>
-            <div className="space-y-6 text-lg text-slate-300 leading-relaxed mb-6">
-                <p>
-                    At <span className="text-white font-semibold">Society Ledgers</span>, we believe every housing society deserves financial clarity, legal compliance, and peace of mind.
+            <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
+                <p className="text-justify">
+                    At Society Ledgers, we believe that every housing society deserves financial transparency, legal compliance, and peace of mind. That's why we specialize exclusively in society accounting and compliance—no side projects, no distractions. 
+                </p>
+                <p className="text-justify">
+                    Our team brings deep expertise in society regulations, Income Tax, GST, audit coordination, and financial reporting. We don't just manage your books—we partner with your committee to ensure smooth governance, accurate records, and timely filings.
+                </p>
+                <p className="text-justify">
+                    Whether your society has 20 flats or 1000+, we're here to simplify compliance, strengthen financial health, and support your community's growth. 
+                </p>
+                <p className="text-white font-semibold text-xl mt-8">
+                    Let's build a better, more transparent society—together.
                 </p>
             </div>
          </div>

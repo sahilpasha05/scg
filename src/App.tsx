@@ -7,7 +7,9 @@ import { Services } from './pages/Services';
 import { CoreStrengths } from './pages/CoreStrengths';
 import { Team } from './pages/Team';
 import { Testimonials } from './pages/Testimonials';
+import { Careers } from './pages/Careers';
 import { Contact } from './pages/Contact';
+import { Privacy } from './pages/Privacy';
 import { PageView } from './types';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -25,25 +27,21 @@ const App: React.FC = () => {
         return <Home onNavigate={setCurrentView} />;
       case PageView.ABOUT:
         return <About />;
-      case PageView. SERVICES:
+      case PageView.SERVICES:
         return <Services />;
-      case PageView. CORE_STRENGTHS:
+      case PageView.CORE_STRENGTHS:
         return <CoreStrengths />;
-      case PageView.TEAM:
+      case PageView.TEAM: 
         return <Team />;
       case PageView.TESTIMONIALS:
         return <Testimonials />;
+      case PageView. CAREERS:
+        return <Careers />;
       case PageView.CONTACT:
         return <Contact />;
       case PageView.PRIVACY:
-        return (
-          <div className="pt-32 pb-20 container mx-auto px-4 min-h-screen">
-            <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
-            <p className="text-slate-600">This is a placeholder for the Privacy Policy.  In a production environment, this would contain the detailed privacy practices of Society Ledgers.</p>
-            <button onClick={() => setCurrentView(PageView.HOME)} className="mt-8 text-brand-600 font-medium hover:underline">Back to Home</button>
-          </div>
-        );
-      default:
+        return <Privacy />;
+      default: 
         return <Home onNavigate={setCurrentView} />;
     }
   };
@@ -54,15 +52,15 @@ const App: React.FC = () => {
       
       <main className="flex-grow">
         <AnimatePresence mode="wait">
-          <motion.div
+          <motion. div
             key={currentView}
-            initial={{ opacity:  0, y: 10 }}
-            animate={{ opacity:  1, y: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
           >
             {renderView()}
-          </motion. div>
+          </motion.div>
         </AnimatePresence>
       </main>
 

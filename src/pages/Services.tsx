@@ -57,9 +57,12 @@ export const Services:  React.FC = () => {
 
       <div className="bg-slate-50 py-16 text-center">
          <div className="container mx-auto px-4">
-             <h3 className="text-2xl font-bold text-slate-900 mb-4">Recommended Provider for MyGate</h3>
-             <p className="text-slate-600 max-w-2xl mx-auto mb-8">
-                 We seamlessly integrate with community management apps like MyGate, ensuring your data flows directly from the gate to the ledger without manual errors. 
+             <div className="mb-4">
+               <span className="inline-block bg-brand-100 text-brand-700 px-3 py-1 rounded-full text-sm font-medium">Preferred Partner</span>
+             </div>
+             <h3 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">We’re a preferred partner of MyGate</h3>
+             <p className="text-lg md:text-xl text-slate-800 max-w-2xl mx-auto mb-8 font-semibold">
+               We’re a preferred accounting and compliance service partner of MyGate, India’s leading community management platform.
              </p>
          </div>
       </div>
