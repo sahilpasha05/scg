@@ -71,7 +71,7 @@ export const SERVICES: ServiceItem[] = [
     title: "GST Advisory & Filing",
     description: "Support with GST applicability on member as well as non-member income, preparation of returns, and compliance management.",
     icon: <Landmark className="w-10 h-10" />,
-    image: "src/assets/Gemini_Generated_Image_8mups58mups58mup. png"
+    image: "src/assets/Gemini_Generated_Image_8mups58mups58mup.png"
   },
   {
     title: "Registrar & Legal Compliance",
