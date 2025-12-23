@@ -53,7 +53,7 @@ export const SERVICES: ServiceItem[] = [
     title: "Society Accounting & Bookkeeping",
     description: "Preparation and maintenance of day to day accounts, ledgers, member wise billing, maintenance receipts, and year end financial statements.",
     icon: <BookOpen className="w-10 h-10" />,
-    image: "https://github.com/sahilpasha05/scg/blob/main/src/assets/hgvg.jpeg"
+    image: "https://raw.githubusercontent.com/sahilpasha05/scg/refs/heads/main/src/assets/hgvg.jpeg"
   },
   {
     title: "Annual Audit & Reporting",
@@ -65,19 +65,19 @@ export const SERVICES: ServiceItem[] = [
     title: "Income Tax Compliance",
     description:  "Filing of Income Tax Returns (ITR), handling TDS returns, and ensuring proper treatment of income from members vs. non-members.",
     icon: <Scale className="w-10 h-10" />,
-    image: "https://github.com/sahilpasha05/scg/blob/main/src/assets/ddr.jpeg"
+    image: "https://raw.githubusercontent.com/sahilpasha05/scg/refs/heads/main/src/assets/ddr.jpeg"
   },
   {
     title: "GST Advisory & Filing",
     description: "Support with GST applicability on member as well as non-member income, preparation of returns, and compliance management.",
     icon: <Landmark className="w-10 h-10" />,
-    image: "shttps://github.com/sahilpasha05/scg/blob/main/src/assets/Gemini_Generated_Image_8mups58mups58mup.png"
+    image: "https://raw.githubusercontent.com/sahilpasha05/scg/refs/heads/main/src/assets/Gemini_Generated_Image_8mups58mups58mup.png"
   },
   {
     title: "Registrar & Legal Compliance",
     description: "Assistance with annual returns to the Registrar of Cooperative Societies, AGM/GBM documentation, resolution filing, and more.",
     icon: <Gavel className="w-10 h-10" />,
-    image:  "https://github.com/sahilpasha05/scg/blob/main/src/assets/unnamed(1).jpg"
+    image:  "https://raw.githubusercontent.com/sahilpasha05/scg/refs/heads/main/src/assets/unnamed(1).jpg"
   },
   {
     title: "Budgeting & Financial Advisory",
