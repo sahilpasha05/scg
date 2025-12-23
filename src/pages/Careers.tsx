@@ -311,7 +311,8 @@ export const Careers: React.FC = () => {
               </button>
 
               <p className="text-xs text-slate-500 text-center mt-4">
-                Your application will be sent via WhatsApp to <span className="font-semibold text-brand-600">+91 8147260587</span>. 
+                Your application will be sent via WhatsApp to <span className="font-semibold text-brand-600">+91 9036940860
+              </span>. 
                 Please attach your resume file in the WhatsApp chat after sending the message.
               </p>
             </form>
