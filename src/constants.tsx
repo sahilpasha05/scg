@@ -203,7 +203,7 @@ export const TESTIMONIALS:  Testimonial[] = [
     name: "Mr.  Biplob Das",
     societyName: "Mana Foresta",
     units:  580,
-    content: "Working with Society Ledgers has been a game-changer for our large community. Their systematic approach to compliance and transparent reporting has built tremendous trust among our residents."
+    content: "We didn’t know that accounting and compliance was such an important aspect of functioning of an RWA, until we contacted the Society Ledgers team.  They not only helped us understand the importance of various compliance aspects, but also established and streamlined our accounting and compliance process.  They are really passionate about their services and they promptly respond to all our communication and requirements.  Their deep domain knowledge, process ownership, and responsiveness have been really impressive so far."
   },
   {
     name: "Mr.  Abhishek Kumar",

@@ -31,9 +31,11 @@ interface HomeProps {
 const WhatsAppButton: React.FC = () => {
   const [showMessage, setShowMessage] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
+  const [shiftUp, setShiftUp] = useState(false); // State for dynamic position based on footer visibility
   const fullText = "Click to Connect";
-  
+
   useEffect(() => {
+    // Show message with a delay
     const showTimer = setTimeout(() => {
       setShowMessage(true);
     }, 3000);
@@ -41,13 +43,33 @@ const WhatsAppButton: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (showMessage && displayedText. length < fullText.length) {
+    // Typing effect for the bubble message
+    if (showMessage && displayedText.length < fullText.length) {
       const typingTimer = setTimeout(() => {
         setDisplayedText(fullText.slice(0, displayedText.length + 1));
       }, 50);
       return () => clearTimeout(typingTimer);
     }
   }, [showMessage, displayedText]);
+
+  useEffect(() => {
+    // Scroll-based dynamic positioning logic
+    const handleScroll = () => {
+      const footer = document.querySelector('footer'); // Target the footer element
+      if (footer) {
+        const footerTop = footer.getBoundingClientRect().top; // Calculate distance to viewport top
+        const viewportHeight = window.innerHeight; // Get current viewport height
+        setShiftUp(footerTop < viewportHeight); // Shift up if footer is visible
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll); // Add scroll listener
+    handleScroll(); // Run on initial load
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll); // Cleanup
+    };
+  }, []);
 
   const handleWhatsAppClick = () => {
     const phoneNumber = '919036940860';
@@ -57,12 +79,16 @@ const WhatsAppButton: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+    <div
+      className={`fixed right-6 z-50 flex items-center gap-3 transition-transform duration-300 ${
+        shiftUp ? 'bottom-[120px]' : 'bottom-6'
+      }`}
+    >
       <AnimatePresence>
         {showMessage && (
           <motion.div
             initial={{ opacity: 0, x: 20, scale: 0.8 }}
-            animate={{ opacity:  1, x: 0, scale: 1 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 20, scale: 0.8 }}
             className="bg-white px-4 py-3 rounded-2xl shadow-xl border border-slate-200 max-w-[200px]"
           >
@@ -85,8 +111,8 @@ const WhatsAppButton: React.FC = () => {
         className="group relative w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] rounded-full shadow-2xl flex items-center justify-center transition-all duration-300"
       >
         <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></span>
-        <img 
-          src="https://cdn-icons-png.flaticon.com/128/4423/4423697.png" 
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/4423/4423697.png"
           alt="WhatsApp"
           className="w-8 h-8 relative z-10"
         />
@@ -115,17 +141,29 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   ];
 
   // Get image style - specific adjustments for Anand and Biplob
-  const getImageStyle = (index: number) => {
-    if (index === 2) { // Anand Agrawal - scale-110
+  const getImageStyle = (index: number): React.CSSProperties => {
+    if (index === 2) { 
+      // Anand Agrawal - Scale Adjustment
       return {
         transform: 'scale(1.1)',
         objectPosition: 'center top'
       };
     }
-    if (index === 4) { // Biplob Das - scale-100
+    if (index === 4) {
+      // Biplob Das - Position Adjustment
       return {
-        transform:  'scale(1)',
+        transform: 'scale(1)',
         objectPosition: 'center top'
+      };
+    }
+    if (index === 5) {
+      // Abhishek Kumar - Match styles with Testimonials
+      return {
+        width: '150px',
+        height: '150px',
+        objectFit: 'cover',
+        objectPosition: 'left center', // Focus on face
+        transform: 'scale(0.9)', // Slight zoom-out
       };
     }
     return {};
@@ -287,154 +325,163 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Why Us / Quote Section */}
-      <SectionWrapper background="dark" className="relative py-12">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-900/30 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+     {/* Why Us / Quote Section */}
+<SectionWrapper background="dark" className="relative py-12">
+  <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-900/30 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
 
-        <div className="max-w-6xl mx-auto">
-          {/* Title and Description - Centered */}
-          <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white tracking-tight">
-              Why <span className="text-brand-400">Society Ledgers? </span>
-            </h2>
-            <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
-              We place ourselves as the back bone to the societies, and protect them from surprises caused by non-compliance or inadequate compliance.
-            </p>
-          </div>
-
-          {/* Grid with 4 strengths + 1 commitment box in center */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
-            {/* First 2 strength boxes */}
-            {STRENGTHS.slice(0, 2).map((strength, idx) => (
-              <div key={idx} className="group p-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors duration-300">
-                <div className="mb-3 text-brand-400 group-hover:text-brand-300 transition-colors bg-brand-900/20 w-fit p-3 rounded-xl">
-                  {strength. icon}
-                </div>
-                <h4 className="text-lg font-bold text-white mb-2">{strength.title}</h4>
-                <p className="text-slate-400 text-sm leading-relaxed">{strength.description}</p>
-              </div>
-            ))}
-
-            {/* Commitment Box - Center position */}
-            <div className="md:col-span-2 lg:col-span-1 lg:row-span-2">
-              <div className="relative h-full">
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-600 to-indigo-600 transform rotate-2 rounded-3xl opacity-20 blur-xl"></div>
-                <div className="bg-slate-800/50 backdrop-blur-xl border border-white/10 p-6 md:p-8 rounded-3xl relative overflow-hidden group h-full flex flex-col">
-                  <div className="absolute top-0 right-0 p-10 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <Star size={140} className="text-white fill-white rotate-12" />
-                  </div>
-                  
-                  <blockquote className="relative z-10 flex-grow flex flex-col">
-                    <div className="flex items-center justify-between mb-5">
-                      <h3 className="text-2xl font-bold text-white">Our Commitment</h3>
-                      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-brand-500/20 text-brand-400">
-                        <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                          <path d="M14.017 21L14.017 18C14.017 16.896 14.389 15.63 15.093 14.41C16.198 12.508 18.068 11.233 20.334 10.992V8H20.263C17.653 8 16.331 9.771 16.331 11.916V13H21.085V21H14.017ZM6.678 21L6.678 18C6.678 16.896 7.051 15.63 7.755 14.41C8.86 12.508 10.73 11.233 12.996 10.992V8H12.925C10.315 8 8.993 9.771 8.993 11.916V13H13.747V21H6.678Z"/>
-                        </svg>
-                      </div>
-                    </div>
-                    <p className="text-base md:text-lg text-slate-200 leading-relaxed text-left flex-grow" style={{ fontFamily: "'Inter', 'Segoe UI', sans-serif", fontWeight: 500 }}>
-                      At Society Ledgers, we believe every housing society deserves financial clarity, legal compliance, and peace of mind. We work closely with management committees to ensure that every rupee is accounted for properly and the compliance scale is significantly improved so that you can focus on building a better and compliant community.
-                    </p>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-
-            {/* Last 2 strength boxes */}
-            {STRENGTHS.slice(2, 4).map((strength, idx) => (
-              <div key={idx + 2} className="group p-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors duration-300">
-                <div className="mb-3 text-brand-400 group-hover:text-brand-300 transition-colors bg-brand-900/20 w-fit p-3 rounded-xl">
-                  {strength.icon}
-                </div>
-                <h4 className="text-lg font-bold text-white mb-2">{strength.title}</h4>
-                <p className="text-slate-400 text-sm leading-relaxed">{strength.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
-      
-      {/* Testimonials - Carousel */}
-      <SectionWrapper background="light" className="py-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-10 px-4">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Voices from the Community</h2>
-              <p className="text-slate-600 max-w-xl text-lg">Check out the experiences of our partner societies</p>
-            </div>
-            <div className="hidden md:block">
-              <button onClick={() => onNavigate(PageView. TESTIMONIALS)} className="text-brand-600 font-bold hover:text-brand-800 transition-colors flex items-center gap-2">
-                Read all stories <ArrowRight size={18} />
-              </button>
-            </div>
-          </div>
-
-          <div className="relative px-4">
-            {/* Navigation Buttons */}
-            <button
-              onClick={handlePrevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg border border-slate-200 hover:bg-slate-50 transition-colors"
-              aria-label="Previous testimonials"
-            >
-              <ChevronLeft size={24} className="text-slate-700" />
-            </button>
-            <button
-              onClick={handleNextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg border border-slate-200 hover:bg-slate-50 transition-colors"
-              aria-label="Next testimonials"
-            >
-              <ChevronRight size={24} className="text-slate-700" />
-            </button>
-
-            {/* Testimonials Grid */}
-            <AnimatePresence mode="wait">
-              <motion.div 
-                key={currentTestimonialIndex}
-                initial={{ opacity:  0, x: 100 }}
-                animate={{ opacity:  1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.5 }}
-                className="grid md:grid-cols-3 gap-5"
-              >
-                {getVisibleTestimonials().map((t, i) => (
-                  <div key={`${currentTestimonialIndex}-${i}`} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-                    {/* Profile First - ALL 128px */}
-                    <div className="flex items-center gap-3 mb-4 border-b border-slate-50 pb-3">
-                      <img 
-                        src={profileImages[t.imageIdx]} 
-                        alt={t.name}
-                        className="w-32 h-32 flex-shrink-0 rounded-full object-cover border-3 border-brand-200 shadow-lg"
-                        style={getImageStyle(t.imageIdx)}
-                      />
-                      <div>
-                        <p className="text-sm font-bold text-slate-900">{t.name}</p>
-                        <p className="text-xs text-slate-500">{t. societyName}</p>
-                      </div>
-                    </div>
-                    {/* Content - Justified */}
-                    <p className="text-slate-600 leading-relaxed flex-grow line-clamp-6 text-justify">"{t.content}"</p>
-                  </div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Pagination Dots */}
-            <div className="flex justify-center gap-2 mt-6">
-              {Array.from({ length: Math.ceil(TESTIMONIALS.length / 3) }).map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentTestimonialIndex(idx)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    idx === currentTestimonialIndex ?  'bg-brand-600 w-8' : 'bg-slate-300'
-                  }`}
-                  aria-label={`Go to testimonial group ${idx + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </SectionWrapper>
+  <div className="max-w-6xl mx-auto">
+    {/* Title and Description - Centered */}
+    <div className="text-center mb-10">
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white tracking-tight">
+        Why <span className="text-brand-400">Society Ledgers? </span>
+      </h2>
+      <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
+        We place ourselves as the backbone to societies, and protect them from surprises caused by non-compliance or inadequate compliance.
+      </p>
     </div>
+
+    {/* Grid with 4 strengths + 1 commitment box in center */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
+      {/* First 2 strength boxes */}
+      {STRENGTHS.slice(0, 2).map((strength, idx) => (
+        <div
+          key={idx}
+          className="group flex flex-col bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors duration-300 p-5"
+        >
+          <div className="flex items-center gap-4 mb-3">
+            <div className="bg-brand-900/20 w-fit p-3 rounded-xl text-brand-400 group-hover:text-brand-300 transition-colors">
+              {strength.icon}
+            </div>
+            <h4 className="text-lg font-bold text-white">{strength.title}</h4>
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed flex-grow">{strength.description}</p>
+        </div>
+      ))}
+
+      {/* Commitment Box - Center position */}
+      <div className="md:col-span-2 lg:col-span-1 lg:row-span-2">
+        <div className="relative h-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-600 to-indigo-600 transform rotate-2 rounded-3xl opacity-20 blur-xl"></div>
+          <div className="bg-slate-800/50 backdrop-blur-xl border border-white/10 p-4 md:p-6 rounded-3xl relative h-full flex flex-col">
+            <div className="absolute top-0 right-0 p-8 opacity-10">
+              <Star size={120} className="text-white fill-white rotate-12" />
+            </div>
+            <div className="relative z-10 flex-grow">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3">Our Commitment</h3>
+              <p className="text-base md:text-lg text-slate-200 leading-relaxed text-justify">
+                At Society Ledgers, we believe every housing society deserves financial clarity,
+                legal compliance, and peace of mind. We work closely with management committees to
+                ensure that every rupee is accounted for properly and the compliance scale is
+                significantly improved so that you can focus on building a better and compliant
+                community.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Last 2 strength boxes */}
+      {STRENGTHS.slice(2, 4).map((strength, idx) => (
+        <div
+          key={idx + 2}
+          className="group flex flex-col bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors duration-300 p-5"
+        >
+          <div className="flex items-center gap-4 mb-3">
+            <div className="bg-brand-900/20 w-fit p-3 rounded-xl text-brand-400 group-hover:text-brand-300 transition-colors">
+              {strength.icon}
+            </div>
+            <h4 className="text-lg font-bold text-white">{strength.title}</h4>
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed flex-grow">{strength.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</SectionWrapper>
+
+{/* Testimonials - Carousel */}
+<SectionWrapper background="light" className="py-12">
+  <div className="max-w-6xl mx-auto">
+    <div className="flex flex-col md:flex-row justify-between items-end mb-10 px-4">
+      <div>
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Voices from the Community</h2>
+        <p className="text-slate-600 max-w-xl text-lg">Check out the experiences of our partner societies</p>
+      </div>
+      <div className="hidden md:block">
+        <button onClick={() => onNavigate(PageView.TESTIMONIALS)} className="text-brand-600 font-bold hover:text-brand-800 transition-colors flex items-center gap-2">
+          Read all stories <ArrowRight size={18} />
+        </button>
+      </div>
+    </div>
+
+    <div className="relative px-4">
+      {/* Navigation Buttons */}
+      <button
+        onClick={handlePrevTestimonial}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg border border-slate-200 hover:bg-slate-50 transition-colors"
+        aria-label="Previous testimonials"
+      >
+        <ChevronLeft size={24} className="text-slate-700" />
+      </button>
+      <button
+        onClick={handleNextTestimonial}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg border border-slate-200 hover:bg-slate-50 transition-colors"
+        aria-label="Next testimonials"
+      >
+        <ChevronRight size={24} className="text-slate-700" />
+      </button>
+
+      {/* Testimonials Grid */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentTestimonialIndex}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.5 }}
+          className="grid md:grid-cols-3 gap-5"
+        >
+          {getVisibleTestimonials().map((t, i) => (
+            <div
+              key={`${currentTestimonialIndex}-${i}`}
+              className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
+            >
+              {/* Profile Section */}
+              <div className="flex items-center gap-3 mb-4 border-b border-slate-50 pb-3">
+                <img
+                  src={profileImages[t.imageIdx]}
+                  alt={t.name}
+                  className="w-32 h-32 flex-shrink-0 rounded-full object-cover border-3 border-brand-200 shadow-lg"
+                  style={getImageStyle(t.imageIdx)}
+                />
+                <div>
+                  <p className="text-sm font-bold text-slate-900">{t.name}</p>
+                  <p className="text-xs text-slate-500">{t.societyName}</p>
+                </div>
+              </div>
+              {/* Content Section */}
+              <p className="text-slate-600 leading-relaxed flex-grow line-clamp-6 text-justify">"{t.content}"</p>
+            </div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Pagination Dots */}
+      <div className="flex justify-center gap-2 mt-6">
+        {Array.from({ length: Math.ceil(TESTIMONIALS.length / 3) }).map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentTestimonialIndex(idx)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              idx === currentTestimonialIndex ? "bg-brand-600 w-8" : "bg-slate-300"
+            }`}
+            aria-label={`Go to testimonial group ${idx + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</SectionWrapper>
+</div>
   );
 };
