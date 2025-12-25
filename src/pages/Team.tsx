@@ -22,7 +22,7 @@ export const Team: React.FC = () => {
 
       <div className="bg-slate-50 py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {TEAM.map((member, idx) => (
               <motion.div
                 key={idx}
@@ -30,39 +30,29 @@ export const Team: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="flex flex-col sm:flex-row h-full">
+                <div className="flex flex-col h-full">
                   {/* Image Section */}
-                  <div className="sm:w-2/5 relative overflow-hidden flex items-center justify-center">
+                  <div className="relative overflow-hidden bg-gradient-to-br from-brand-50 to-brand-100">
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover"
+                      className="object-cover"
                       style={{
-                        objectPosition:
-                          member.name.includes('CA Arvind K. Agarwal')
-                            ? 'center'
-                            : member.name.includes('CA Anoop K. Agarwal')
-                            ? 'center'
-                            : member.name.includes('Kunal Maheshwari')
-                            ? 'center'
-                            : member.name.includes('Pavan Gururaj Bhardwaj')
-                            ? 'center'
-                            : 'center 20%',
-                        objectFit: 'cover',
+                        width: '413px',  // Set fixed width
+                        height: '531px', // Set fixed height
+                        objectPosition: 'center', // Center the image
                       }}
                     />
-                    <div className="absolute inset-0 bg-brand-900/20"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                   </div>
 
                   {/* Content Section */}
-                  <div className="sm:w-3/5 p-8 flex flex-col justify-center">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-1">{member.name}</h3>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">{member.name}</h3>
                     <p className="text-slate-500 font-medium text-sm mb-4">{member.role}</p>
-                    <p className="text-slate-600 leading-relaxed text-sm mb-6 text-justify">
-                      {member.bio}
-                    </p>
+                    <p className="text-slate-600 leading-relaxed text-sm">{member.bio}</p>
                   </div>
                 </div>
               </motion.div>
@@ -88,7 +78,7 @@ export const Team: React.FC = () => {
                 <Briefcase size={28} />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">Service Delivery Supervisor</h3>
-              <p className="text-slate-600 leading-relaxed text-justify">
+              <p className="text-slate-600 leading-relaxed">
                 Dedicated supervisors oversee the execution of all accounting and compliance tasks,
                 ensuring that SOPs are strictly followed and quality benchmarks are met for every
                 society.
@@ -101,7 +91,7 @@ export const Team: React.FC = () => {
                 <Users size={28} />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">Team of Associates</h3>
-              <p className="text-slate-600 leading-relaxed text-justify">
+              <p className="text-slate-600 leading-relaxed">
                 Skilled accounting and compliance executives handle day-to-day bookkeeping, voucher
                 processing, and regulatory compliance efficiently.
               </p>

@@ -22,12 +22,14 @@ import anoopAgrawalImg from './assets/AnoopKrAgarwal.png';
 import kunalMaheshwariImg from './assets/KunalMaheshwari.jpeg';
 import pavanBhardwajImg from './assets/PavanGururajBharadwaj.jpg';
 
+
 // Import hero images
 import heroImg1 from './assets/Accounting1.jpg';
 import heroImg2 from './assets/Accounting4.jpg';
 import heroImg3 from './assets/g3JLQ6Dd.png';
 import heroImg4 from './assets/SocietyPic4.jpg';
 import heroImg5 from './assets/SocietyPic5.jpg';
+import heroImg6 from './assets/SocietyPic2.jpg';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', view: PageView.HOME },
@@ -46,6 +48,7 @@ export const HERO_IMAGES = [
   heroImg3,
   heroImg4,
   heroImg5,
+  heroImg6,
 ];
 
 export const SERVICES: ServiceItem[] = [
