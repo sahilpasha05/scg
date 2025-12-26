@@ -65,16 +65,16 @@ export const SERVICES: ServiceItem[] = [
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40? auto=format&fit=crop&q=80&w=800&h=600"
   },
   {
-    title: "Income Tax Compliance",
+    title: "Income Tax Advisory, Compliance and Litigation Support",
     description:  "Filing of Income Tax Returns (ITR), handling TDS returns, and ensuring proper treatment of income from members vs. non-members.",
     icon: <Scale className="w-10 h-10" />,
-    image: "https://raw.githubusercontent.com/sahilpasha05/scg/refs/heads/main/src/assets/ddr.jpeg"
+    image: "https://raw.githubusercontent.com/sahilpasha05/scg/refs/heads/main/src/assets/IncomeTaxCompliance.jpg"
   },
   {
-    title: "GST Advisory & Filing",
+    title: "GST Advisory, Compliance and Litigation Support",
     description: "Support with GST applicability on member as well as non-member income, preparation of returns, and compliance management.",
     icon: <Landmark className="w-10 h-10" />,
-    image: "https://raw.githubusercontent.com/sahilpasha05/scg/refs/heads/main/src/assets/Gemini_Generated_Image_8mups58mups58mup.png"
+    image: "https://raw.githubusercontent.com/sahilpasha05/scg/refs/heads/main/src/assets/GSTCompliance.jpg"
   },
   {
     title: "Registrar & Legal Compliance",
@@ -185,22 +185,16 @@ export const TESTIMONIALS:  Testimonial[] = [
     content: "The team at Society Ledgers don't just handle the accounts; they provide proactive advice that helps us make informed decisions. Their insights carry immense value.  For our 423-unit society, they completely transformed the way accounting was handled and brought in significant process improvements and compliance rigor, with complete process ownership.  We have thoroughly enjoyed our association with them for over 5 years."
   },
   {
-    name: "Mrs. Preethi Subramanian",
-    societyName: "NVT LifeSquare Villas",
-    units: 65,
-    content: "Though we are a small association with only 65 villa units, the Society Ledgers team streamlined our accounting processes and advised us to migrate from Tally to MyGate for real-time visibility of accounts and elimination of data duplication.  They planned and executed the migration meticulously and identified compliance gaps in our earlier setup, providing appropriate solutions. We are very happy with our association with them for accounting and compliance services."
-  },
-  {
-    name: "Mr. Anand Agrawal",
-    societyName:  "DSR Whitewaters",
-    units: 412,
-    content: "As an RWA of 400+ units, we feel fortunate to have engaged Society Ledgers.  From the early stages, their value addition was evident. They identified an important GST compliance gap and helped us correct it through detailed data analysis and corrective measures.  Their depth of knowledge and experience in RWA compliance matters is truly commendable."
-  },
-  {
     name: "Mr. B. M. Rajan",
     societyName: "Sobha Daffodil Condominiums",
     units: 432,
-    content: "In our 7 years of association with Society Ledgers, we have been impressed with their compliance-oriented approach, responsiveness, and accuracy. Their proactive working style ensures we rarely need to follow up on accounting or compliance matters.  They transitioned us from periodic accounting to real-time accounting, significantly improving compliance levels and stakeholder satisfaction. Their processes also helped us identify non-compliant vendors, enabling corrective actions. We look forward to a long-term association with them."
+    content: "In our 7 years of association with the Society Ledgers Team, we’re really impressed with their compliance-oriented approach, responsiveness, and accuracy.  Also, they are so proactive that we hardly would have to follow up for any accounting or compliance matter with them.  They moved us away from periodic accounting to real time accounting which helped improve our compliance level, as well as overall satisfaction of our stakeholders.  Their processes also helped us identify some of the vendors who were not adequately compliant with some important statutory compliance, eventually leading to replacement of such non compliant vendors. We look forward to continuing this deep bonding with them for a long term and wish them a luck on their mission of becoming an exclusive accounting and compliance services provider to resident associations."
+  },
+  {
+    name: "Mrs. Prethei Subramanian",
+    societyName: "NVT LifeSquare Villas",
+    units: 65,
+    content: "Though we are a small association with only 65 villa units, the Society Ledgers team streamlined our accounting processes and advised us to migrate from Tally to MyGate for real-time visibility of accounts and elimination of data duplication.  They planned and executed the migration meticulously and identified compliance gaps in our earlier setup, providing appropriate solutions. We are very happy with our association with them for accounting and compliance services."
   },
   {
     name: "Mr.  Biplob Das",
@@ -212,6 +206,12 @@ export const TESTIMONIALS:  Testimonial[] = [
     name: "Mr.  Abhishek Kumar",
     societyName: "DSR Sunrise Towers",
     units: 320,
-    content: "The professionalism and expertise of Society Ledgers team is exceptional. They have simplified our complex accounting requirements and made compliance stress-free for our management committee."
+    content: "We would like to express our gratitude to the Society Ledgers team for their extremely valuable insights with micro level suggestions for MyGate ERP platform, which is exclusively designed for accounting and compliance requirements of societies.With their expertise in this domain, we have been able to make multiple improvements to our ERP platform, which are going to add significant value to the 25000+ societies that we currently cater to.  We have no hesitation to recommend them for accounting and compliance requirements of societies."
+  },
+  {
+    name: "Mr. Anand Agrawal",
+    societyName:  "DSR Whitewaters",
+    units: 412,
+    content: "As an RWA of 400+ units, we feel fortunate to have engaged Society Ledgers.  From the early stages, their value addition was evident. They identified an important GST compliance gap and helped us correct it through detailed data analysis and corrective measures.  Their depth of knowledge and experience in RWA compliance matters is truly commendable."
   }
 ];

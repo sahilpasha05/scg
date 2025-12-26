@@ -36,7 +36,7 @@ export const CoreStrengths: React.FC = () => {
                   <h3 className="text-2xl font-bold text-slate-900">{strength.title}</h3>
                 </div>
                 {/* Make Description Stretch to Maintain Equal Heights */}
-                <p className="text-slate-600 leading-relaxed text-lg grow">
+                <p className="text-slate-600 leading-relaxed text-lg grow text-justify">
                   {strength.description}
                 </p>
               </motion.div>

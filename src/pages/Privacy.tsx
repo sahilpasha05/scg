@@ -202,9 +202,7 @@ export const Privacy: React.FC = () => {
               <div className="space-y-3 text-slate-700">
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-brand-600" />
-                  <a href="mailto:admin@societyledgers.com" className="hover:text-brand-600">
-                    admin@societyledgers. com
-                  </a>
+                  <span className="text-slate-700">admin@societyledgers.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-brand-600" />

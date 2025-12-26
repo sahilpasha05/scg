@@ -16,16 +16,16 @@ export const Testimonials: React.FC = () => {
   const profileImages = [
     satishRustagiImg, // Satish Rustagi
     rajanBMImg,       // Rajan BM (Moved to second position)
-    anandAgrawalImg,  // Anand Agrawal
     preethiSubramanianImg, // Preethi Subramanian
     biplobDasImg,     // Biplob Das
     abhishekKumarImg, // Abhishek Kumar
+    anandAgrawalImg,  // Anand Agrawal
   ];
 
   // Updated dynamic image styles
   const getImageStyle = (index: number): React.CSSProperties => {
-    if (index === 2) {
-      // Specific style for Anand Agrawal
+    if (index === 5) {
+      // Specific style for Anand Agrawal (now index 5)
       return {
         width: '150px',
         height: '150px',
@@ -34,8 +34,8 @@ export const Testimonials: React.FC = () => {
         transform: 'scale(1.1)', // Slight zoom-in
       };
     }
-    if (index === 4) {
-      // Specific adjustment for Biplob Das
+    if (index === 3) {
+      // Specific adjustment for Biplob Das (now index 3)
       return {
         width: '150px',
         height: '150px',
@@ -43,8 +43,8 @@ export const Testimonials: React.FC = () => {
         objectPosition: 'center top',
       };
     }
-    if (index === 5) {
-      // Adjustment for Abhishek Kumar to focus on face
+    if (index === 4) {
+      // Adjustment for Abhishek Kumar to focus on face (now index 4)
       return {
         width: '150px',
         height: '150px',

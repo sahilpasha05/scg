@@ -86,13 +86,10 @@ export const Contact: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <h4 className="font-bold text-slate-900 mb-2">Call Us</h4>
-                  <a
-                    href="tel:+919036940860"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-lg transition-all transform hover:scale-105 shadow-md hover:shadow-lg"
-                  >
+                  <div className="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 text-white font-semibold rounded-lg shadow-md">
                     <Phone size={18} />
                     +91 90369 40860
-                  </a>
+                  </div>
                   <p className="text-xs text-slate-400 mt-2">Mon-Sat, 10am - 6pm</p>
                 </div>
               </div>
@@ -103,13 +100,10 @@ export const Contact: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <h4 className="font-bold text-slate-900 mb-2">Email Us</h4>
-                  <a
-                    href="mailto:admin@societyledgers.com"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-lg transition-all transform hover:scale-105 shadow-md hover:shadow-lg"
-                  >
+                  <div className="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 text-white font-semibold rounded-lg shadow-md">
                     <Mail size={18} />
                     admin@societyledgers.com
-                  </a>
+                  </div>
                 </div>
               </div>
 
@@ -122,7 +116,7 @@ export const Contact: React.FC = () => {
                   <h4 className="font-bold text-slate-900 mb-2">Locate Us</h4>
                   <p>
                     <a
-                      href="https://maps.app.goo.gl/ZSCeQBmo6sywXMgi9"
+                      href="https://maps.app.goo.gl/7FXkbsrudWS7MFjh6"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-brand-600 hover:underline"

@@ -22,7 +22,7 @@ export const Team: React.FC = () => {
 
       <div className="bg-slate-50 py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className={"grid " + (TEAM.length === 4 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-2' : 'sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3') + " gap-8 max-w-6xl mx-auto"}>
             {TEAM.map((member, idx) => (
               <motion.div
                 key={idx}
@@ -30,7 +30,7 @@ export const Team: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow duration-300 w-[413px]"
               >
                 <div className="flex flex-col h-full">
                   {/* Image Section */}
@@ -38,12 +38,7 @@ export const Team: React.FC = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="object-cover"
-                      style={{
-                        width: '413px',  // Set fixed width
-                        height: '531px', // Set fixed height
-                        objectPosition: 'center', // Center the image
-                      }}
+                      className="w-full h-[531px] object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                   </div>
@@ -74,11 +69,13 @@ export const Team: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Service Delivery Supervisor */}
             <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col items-start">
-              <div className="p-3 bg-brand-50 text-brand-600 rounded-xl mb-6">
-                <Briefcase size={28} />
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-brand-50 text-brand-600 rounded-xl">
+                  <Briefcase size={28} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900">Service Delivery Supervisor</h3>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Service Delivery Supervisor</h3>
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed text-justify">
                 Dedicated supervisors oversee the execution of all accounting and compliance tasks,
                 ensuring that SOPs are strictly followed and quality benchmarks are met for every
                 society.
@@ -87,11 +84,13 @@ export const Team: React.FC = () => {
 
             {/* Team of Associates */}
             <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 flex flex-col items-start">
-              <div className="p-3 bg-brand-50 text-brand-600 rounded-xl mb-6">
-                <Users size={28} />
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-brand-50 text-brand-600 rounded-xl">
+                  <Users size={28} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900">Team of Associates</h3>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Team of Associates</h3>
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed text-justify">
                 Skilled accounting and compliance executives handle day-to-day bookkeeping, voucher
                 processing, and regulatory compliance efficiently.
               </p>

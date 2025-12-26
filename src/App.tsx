@@ -12,6 +12,7 @@ import { Contact } from './pages/Contact';
 import { Privacy } from './pages/Privacy';
 import { PageView } from './types';
 import { motion, AnimatePresence } from 'framer-motion';
+import { WhatsAppButton } from './components/UI/WhatsAppButton';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<PageView>(PageView.HOME);
@@ -63,8 +64,8 @@ const App: React.FC = () => {
           </motion.div>
         </AnimatePresence>
       </main>
-
       <Footer onNavigate={setCurrentView} />
+      <WhatsAppButton />
     </div>
   );
 };

@@ -132,10 +132,10 @@ export const Careers: React.FC = () => {
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none bg-white"
                 >
                   <option value="">Select a position</option>
-                  <option value="Accounting and compliance Executive">Accounting and compliance Executive </option>
-                  <option value="Accounting and compliance Specialist">Accounting and compliance Specialist</option>
+                  <option value="Accounting and Compliance Executive">Accounting and Compliance Executive </option>
+                  <option value="Accounting and Compliance Specialist">Accounting and Compliance Specialist</option>
                   <option value="Service Delivery Lead">Service Delivery Lead</option>
-                  <option value="Service Delivery manager">Service Delivery manager</option>
+                  <option value="Service Delivery Manager">Service Delivery Manager</option>
                   <option value="Other">Other</option>
                 </select>
               </div>

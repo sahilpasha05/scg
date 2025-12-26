@@ -27,104 +27,7 @@ interface HomeProps {
   onNavigate:  (view: PageView) => void;
 }
 
-// WhatsApp Floating Button Component
-const WhatsAppButton: React.FC = () => {
-  const [showMessage, setShowMessage] = useState(false);
-  const [displayedText, setDisplayedText] = useState('');
-  const [shiftUp, setShiftUp] = useState(false); // State for dynamic position based on footer visibility
-  const fullText = "Click to Connect";
-
-  useEffect(() => {
-    // Show message with a delay
-    const showTimer = setTimeout(() => {
-      setShowMessage(true);
-    }, 3000);
-    return () => clearTimeout(showTimer);
-  }, []);
-
-  useEffect(() => {
-    // Typing effect for the bubble message
-    if (showMessage && displayedText.length < fullText.length) {
-      const typingTimer = setTimeout(() => {
-        setDisplayedText(fullText.slice(0, displayedText.length + 1));
-      }, 50);
-      return () => clearTimeout(typingTimer);
-    }
-  }, [showMessage, displayedText]);
-
-  useEffect(() => {
-    // Scroll-based dynamic positioning logic
-    const handleScroll = () => {
-      const footer = document.querySelector('footer'); // Target the footer element
-      if (footer) {
-        const footerTop = footer.getBoundingClientRect().top; // Calculate distance to viewport top
-        const viewportHeight = window.innerHeight; // Get current viewport height
-        setShiftUp(footerTop < viewportHeight); // Shift up if footer is visible
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll); // Add scroll listener
-    handleScroll(); // Run on initial load
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll); // Cleanup
-    };
-  }, []);
-
-  const handleWhatsAppClick = () => {
-    const phoneNumber = '919036940860';
-    const message = 'Hi, I need assistance';
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
-  return (
-    <div
-      className={`fixed right-6 z-50 flex items-center gap-3 transition-transform duration-300 ${
-        shiftUp ? 'bottom-[120px]' : 'bottom-6'
-      }`}
-    >
-      <AnimatePresence>
-        {showMessage && (
-          <motion.div
-            initial={{ opacity: 0, x: 20, scale: 0.8 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: 20, scale: 0.8 }}
-            className="bg-white px-4 py-3 rounded-2xl shadow-xl border border-slate-200 max-w-[200px]"
-          >
-            <p className="text-sm font-medium text-slate-800">
-              {displayedText}
-              {displayedText.length < fullText.length && (
-                <span className="inline-block w-0.5 h-4 bg-slate-800 ml-1 animate-pulse"></span>
-              )}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <motion.button
-        onClick={handleWhatsAppClick}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="group relative w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] rounded-full shadow-2xl flex items-center justify-center transition-all duration-300"
-      >
-        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></span>
-        <img
-          src="https://cdn-icons-png.flaticon.com/128/4423/4423697.png"
-          alt="WhatsApp"
-          className="w-8 h-8 relative z-10"
-        />
-        {showMessage && (
-          <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold border-2 border-white">
-            1
-          </span>
-        )}
-      </motion.button>
-    </div>
-  );
-};
+// WhatsAppButton moved to a shared component to guarantee a single instance
 
 export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -133,31 +36,31 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   // Testimonial profile images array matching the order in TESTIMONIALS
   const profileImages = [
     satishRustagiImg,
-    preethiSubramanianImg,
-    anandAgrawalImg,
     rajanBMImg,
+    preethiSubramanianImg,
     biplobDasImg,
-    abhishekKumarImg
+    abhishekKumarImg,
+    anandAgrawalImg
   ];
 
   // Get image style - specific adjustments for Anand and Biplob
   const getImageStyle = (index: number): React.CSSProperties => {
-    if (index === 2) { 
-      // Anand Agrawal - Scale Adjustment
+    if (index === 5) { 
+      // Anand Agrawal - Scale Adjustment (now index 5)
       return {
         transform: 'scale(1.1)',
         objectPosition: 'center top'
       };
     }
-    if (index === 4) {
-      // Biplob Das - Position Adjustment
+    if (index === 3) {
+      // Biplob Das - Position Adjustment (now index 3)
       return {
         transform: 'scale(1)',
         objectPosition: 'center top'
       };
     }
-    if (index === 5) {
-      // Abhishek Kumar - Match styles with Testimonials
+    if (index === 4) {
+      // Abhishek Kumar - Match styles with Testimonials (now index 4)
       return {
         width: '150px',
         height: '150px',
@@ -220,7 +123,6 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
   return (
     <div className="w-full">
-      <WhatsAppButton />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-32">
