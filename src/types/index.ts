@@ -38,7 +38,7 @@ export interface Testimonial {
   name: string;
   role?: string;
   societyName: string;
-  units?: number;
+  units?: number | string;
   content: string;
 }
 

@@ -5,21 +5,21 @@ import { Building2, FileText, CheckCircle, Headphones, Handshake } from 'lucide-
 
 export const About:  React.FC = () => {
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-24 pb-20">
       {/* Intro Section */}
       <SectionWrapper background="light">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md: text-5xl font-bold text-slate-900 mb-8">About Society Ledgers</h1>
           
-          <p className="text-xl text-slate-700 leading-relaxed mb-8">
+          <p className="text-xl text-slate-700 leading-relaxed mb-8 text-justify max-w-3xl mx-auto">
              Society Ledgers is a dedicated team of accountants, tax consultants, and compliance professionals with extensive experience working with housing societies, apartment associations, and residential complexes.  
           </p>
           
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-left mb-10">
-             <p className="text-slate-600 leading-relaxed mb-6 text-lg">
+             <p className="text-slate-600 leading-relaxed mb-6 text-lg text-justify">
                 With a strong understanding of the <span className="font-semibold text-slate-900">Societies Acts, Model Bye-Laws, Income Tax, and GST</span> provisions applicable to housing societies, we deliver services that are accurate, timely, and aligned with each society's specific legal framework.
              </p>
-             <p className="text-slate-800 leading-relaxed font-medium text-lg border-l-4 border-brand-500 pl-4">
+             <p className="text-slate-800 leading-relaxed font-medium text-lg border-l-4 border-brand-500 pl-4 text-justify">
                 We don't just manage numbers — we help housing societies build transparent, compliant, and smoothly functioning communities. 
              </p>
           </div>
@@ -43,10 +43,12 @@ export const About:  React.FC = () => {
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
              {/* Card 1 */}
              <motion.div whileHover={{ y: -5 }} className="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full">
-                <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
-                    <Building2 size={24} />
+                <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Building2 size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900">Focused Expertise in Housing Societies</h3>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Focused Expertise in Housing Societies</h3>
                 <p className="text-slate-600 leading-relaxed text-justify flex-grow">
                     We work <span className="font-semibold text-brand-600">exclusively with housing societies</span>. We understand your pain points, compliance deadlines, and governance issues better than anyone else.
                 </p>
@@ -54,10 +56,12 @@ export const About:  React.FC = () => {
 
              {/* Card 2 */}
              <motion.div whileHover={{ y: -5 }} className="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full">
-                <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
-                    <FileText size={24} />
+                <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <FileText size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900">Transparent, Member-Friendly Reporting</h3>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Transparent, Member-Friendly Reporting</h3>
                 <p className="text-slate-600 leading-relaxed text-justify flex-grow">
                     We create clear financial reports and member statements that increase trust and transparency within the society.  No jargon, just clarity.
                 </p>
@@ -65,10 +69,12 @@ export const About:  React.FC = () => {
 
              {/* Card 3 */}
              <motion. div whileHover={{ y:  -5 }} className="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full">
-                <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
-                    <CheckCircle size={24} />
+                <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <CheckCircle size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900">End-to-End Compliance Support</h3>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">End-to-End Compliance Support</h3>
                 <p className="text-slate-600 leading-relaxed text-justify flex-grow">
                     From day-to-day bookkeeping to statutory filings and audit coordination — we manage it all under one roof so you don't have to coordinate with multiple vendors. 
                 </p>
@@ -76,10 +82,12 @@ export const About:  React.FC = () => {
 
              {/* Card 4 */}
              <motion.div whileHover={{ y: -5 }} className="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full">
-                <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6">
-                    <Headphones size={24} />
+                <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Headphones size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900">Personalized & Prompt Support</h3>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Personalized & Prompt Support</h3>
                 <p className="text-slate-600 leading-relaxed text-justify flex-grow">
                     Whether your society has 20 flats or 1000+, we tailor our services to fit your needs.   Prompt service is our promise.  
                 </p>
@@ -87,10 +95,12 @@ export const About:  React.FC = () => {
 
              {/* Card 5 */}
              <motion.div whileHover={{ y: -5 }} className="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-100 md:col-span-2 lg:col-span-2 flex flex-col h-full">
-                <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6">
-                    <Handshake size={24} />
+                <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Handshake size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900">Strategic Participation & Advisory</h3>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Strategic Participation & Advisory</h3>
                 <p className="text-slate-600 leading-relaxed text-justify flex-grow">
                     We extend our active participation in formulating key policies and enabling key decisions, helping positively influence the finances and governance of the Association.  We are more than just accountants; we are your strategic partners. 
                 </p>

@@ -74,6 +74,10 @@ export const Footer:  React.FC<FooterProps> = ({ onNavigate }) => {
                 <Mail size={18} className="text-brand-500 flex-shrink-0" />
                 <span className="text-slate-400">admin@societyledgers.com</span>
               </li>
+              <li className="flex items-center space-x-3">
+                <MapPin size={18} className="text-brand-500 flex-shrink-0" />
+                <span className="text-slate-400">Locate Us : <a href="https://maps.app.goo.gl/ZSCeQBmo6sywXMgi9" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors break-all">https://maps.app.goo.gl/ZSCeQBmo6sywXMgi9</a></span>
+              </li>
             </ul>
           </div>
         </div>
@@ -82,7 +86,6 @@ export const Footer:  React.FC<FooterProps> = ({ onNavigate }) => {
           <p>&copy; {new Date().getFullYear()} Society Ledgers. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <button onClick={() => onNavigate(PageView.PRIVACY)} className="hover:text-white transition-colors">Privacy Policy</button>
-            <button className="hover:text-white transition-colors">Terms of Service</button>
           </div>
         </div>
       </div>

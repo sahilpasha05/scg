@@ -27,7 +27,6 @@ import pavanBhardwajImg from './assets/PavanGururajBharadwaj.jpg';
 import heroImg1 from './assets/Accounting1.jpg';
 import heroImg2 from './assets/Accounting4.jpg';
 import heroImg3 from './assets/g3JLQ6Dd.png';
-import heroImg4 from './assets/SocietyPic4.jpg';
 import heroImg5 from './assets/SocietyPic5.jpg';
 import heroImg6 from './assets/SocietyPic2.jpg';
 
@@ -46,7 +45,6 @@ export const HERO_IMAGES = [
   heroImg1,
   heroImg2,
   heroImg3,
-  heroImg4,
   heroImg5,
   heroImg6,
 ];
@@ -92,8 +90,8 @@ export const SERVICES: ServiceItem[] = [
 
 export const STRENGTHS: StrengthItem[] = [
   {
-    title:  "Niche Expertise",
-    description:  "We don't do everything.  We specialize exclusively in Housing Societies & RWAs.",
+    title: "Niche Expertise",
+    description: "We don't do everything. We specialize exclusively in Housing Societies & RWAs.",
     icon: <ShieldCheck className="w-6 h-6 text-brand-600" />
   },
   {
@@ -182,12 +180,12 @@ export const TESTIMONIALS:  Testimonial[] = [
     name: "Mr.  Satish Rustagi",
     societyName: "Sattva Senorita Apartments",
     units: 423,
-    content: "The team at Society Ledgers don't just handle the accounts; they provide proactive advice that helps us make informed decisions. Their insights carry immense value.  For our 423-unit society, they completely transformed the way accounting was handled and brought in significant process improvements and compliance rigor, with complete process ownership.  We have thoroughly enjoyed our association with them for over 5 years."
+    content: "The team at Society Ledgers don't just handle the accounts; they provide proactive advice that helps us make informed decisions. Their insights carry immense value. For our 423-unit society, they completely transformed the way accounting was handled and brought in significant process improvements and compliance rigor, with complete process ownership. We have thoroughly enjoyed our association with them for over 5 years.\n\nTheir responsiveness, transparency, and deep understanding of society operations have given our managing committee complete confidence in financial governance. They consistently stay ahead of regulatory requirements and ensure timely reporting without any follow-ups. What truly sets them apart is their ability to simplify complex financial matters and communicate them clearly to all stakeholders. Their structured approach has helped us reduce errors, improve efficiency, and maintain strong financial discipline. We truly consider Society Ledgers a trusted partner in our society's long-term growth and stability."
   },
   {
     name: "Mr. B. M. Rajan",
     societyName: "Sobha Daffodil Condominiums",
-    units: 432,
+
     content: "In our 7 years of association with the Society Ledgers Team, we’re really impressed with their compliance-oriented approach, responsiveness, and accuracy.  Also, they are so proactive that we hardly would have to follow up for any accounting or compliance matter with them.  They moved us away from periodic accounting to real time accounting which helped improve our compliance level, as well as overall satisfaction of our stakeholders.  Their processes also helped us identify some of the vendors who were not adequately compliant with some important statutory compliance, eventually leading to replacement of such non compliant vendors. We look forward to continuing this deep bonding with them for a long term and wish them a luck on their mission of becoming an exclusive accounting and compliance services provider to resident associations."
   },
   {
@@ -199,19 +197,18 @@ export const TESTIMONIALS:  Testimonial[] = [
   {
     name: "Mr.  Biplob Das",
     societyName: "Mana Foresta",
-    units:  580,
+    units:  56,
     content: "We didn’t know that accounting and compliance was such an important aspect of functioning of an RWA, until we contacted the Society Ledgers team.  They not only helped us understand the importance of various compliance aspects, but also established and streamlined our accounting and compliance process.  They are really passionate about their services and they promptly respond to all our communication and requirements.  Their deep domain knowledge, process ownership, and responsiveness have been really impressive so far."
   },
   {
     name: "Mr.  Abhishek Kumar",
     societyName: "DSR Sunrise Towers",
-    units: 320,
     content: "We would like to express our gratitude to the Society Ledgers team for their extremely valuable insights with micro level suggestions for MyGate ERP platform, which is exclusively designed for accounting and compliance requirements of societies.With their expertise in this domain, we have been able to make multiple improvements to our ERP platform, which are going to add significant value to the 25000+ societies that we currently cater to.  We have no hesitation to recommend them for accounting and compliance requirements of societies."
   },
   {
     name: "Mr. Anand Agrawal",
     societyName:  "DSR Whitewaters",
-    units: 412,
+    units: 400 ,
     content: "As an RWA of 400+ units, we feel fortunate to have engaged Society Ledgers.  From the early stages, their value addition was evident. They identified an important GST compliance gap and helped us correct it through detailed data analysis and corrective measures.  Their depth of knowledge and experience in RWA compliance matters is truly commendable."
   }
 ];

@@ -1,55 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const PHONE_NUMBER = '919036940860';
-const FULL_TEXT = 'Click to Connect';
 
 export const WhatsAppButton: React.FC = () => {
-  const [showMessage, setShowMessage] = useState(false);
-  const [displayedText, setDisplayedText] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
   const [bottomOffset, setBottomOffset] = useState<number>(24);
-
-  useEffect(() => {
-    // Show the bubble quickly after page open for better UX
-    const showTimer = setTimeout(() => setShowMessage(true), 150);
-    return () => clearTimeout(showTimer);
-  }, []);
-
-  useEffect(() => {
-    if (!showMessage) return;
-    setDisplayedText('');
-    setIsTyping(true);
-    let idx = 0;
-    const interval = setInterval(() => {
-      idx += 1;
-      setDisplayedText(FULL_TEXT.slice(0, idx));
-      if (idx >= FULL_TEXT.length) {
-        clearInterval(interval);
-        setIsTyping(false);
-      }
-    }, 20);
-    return () => {
-      clearInterval(interval);
-      setIsTyping(false);
-    };
-  }, [showMessage]);
-
-  useEffect(() => {
-    // Robust mount guard using window flag
-    const flag = '__whatsapp_floating_mounted__';
-    const leftovers = document.querySelectorAll('#whatsapp-floating, .whatsapp-floating');
-    leftovers.forEach(n => n.parentNode?.removeChild(n));
-
-    if ((window as any)[flag]) return;
-    (window as any)[flag] = true;
-
-    return () => {
-      delete (window as any)[flag];
-      const leftoversCleanup = document.querySelectorAll('#whatsapp-floating, .whatsapp-floating');
-      leftoversCleanup.forEach(n => n.parentNode?.removeChild(n));
-    };
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,55 +35,32 @@ export const WhatsAppButton: React.FC = () => {
   };
 
   return (
-    <div
-      id="whatsapp-floating"
-      className="fixed right-6 flex items-center gap-3 transition-all duration-300"
-      style={{ bottom: `${bottomOffset}px`, right: '1.5rem', overflow: 'visible', zIndex: 99999 }}
+    <motion.button
+      onClick={handleWhatsAppClick}
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.3, delay: 0.5 }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+      className="fixed w-16 h-16 bg-[#25D366] hover:bg-[#128C7E] rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 cursor-pointer z-[9999]"
+      style={{ 
+        bottom: `${bottomOffset}px`, 
+        right: '24px'
+      }}
+      aria-label="Contact us on WhatsApp"
     >
-      <AnimatePresence>
-        {showMessage && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            className="bg-white px-4 py-3 rounded-2xl shadow-xl border border-slate-200 max-w-[220px] z-50 pointer-events-auto absolute whitespace-nowrap"
-            style={{
-              right: 'calc(100% + 16px)',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              minHeight: '44px',
-              display: 'flex',
-              alignItems: 'center',
-            }}
-          >
-            <p className="text-sm font-medium text-slate-800 leading-tight">
-              {displayedText}
-              {isTyping && <span className="ml-1 inline-block text-slate-800 animate-pulse">|</span>}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <motion.button
-        onClick={handleWhatsAppClick}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="group relative w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] rounded-full shadow-2xl flex items-center justify-center transition-all duration-300"
+      <svg
+        viewBox="0 0 32 32"
+        className="w-10 h-10 fill-white"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75" />
-        <img
-          src="https://cdn-icons-png.flaticon.com/128/4423/4423697.png"
-          alt="WhatsApp"
-          className="w-8 h-8 relative z-10"
-        />
-        {showMessage && (
-          <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold border-2 border-white">
-            1
-          </span>
-        )}
-      </motion.button>
-    </div>
+        <path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.738 5.488 2.025 7.788L0 32l8.413-2.113A15.888 15.888 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.388c-2.487 0-4.887-.681-7-1.95l-.5-.3-5.175 1.3 1.35-5.063-.325-.537A13.275 13.275 0 012.612 16c0-7.35 5.975-13.325 13.325-13.325S29.262 8.65 29.262 16 23.287 29.388 16 29.388z"/>
+        <path d="M23.738 19.5c-.4-.2-2.363-1.175-2.738-1.3-.363-.138-.625-.2-.888.2-.262.4-1.012 1.3-1.237 1.563-.225.262-.45.3-.85.1s-1.65-.613-3.138-1.95c-1.162-1.038-1.95-2.313-2.175-2.713s-.025-.613.175-.813c.175-.175.4-.45.6-.675s.263-.375.4-.625.062-.475-.025-.675-.888-2.15-1.213-2.95c-.313-.775-.637-.675-.888-.687-.225-.012-.475-.012-.725-.012s-.663.087-.988.475-.3.675-1.3 2.125c-1 1.45-.1 2.925 1 4.5s3.163 4.838 7.2 6.563c1.013.425 1.8.675 2.425.863.987.313 1.888.263 2.6.163.787-.113 2.363-.975 2.7-1.925.325-.95.325-1.763.225-1.925-.1-.15-.35-.25-.75-.45z"/>
+      </svg>
+      <span className="absolute -top-1 -right-1 flex h-3 w-3">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+        <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+      </span>
+    </motion.button>
   );
 };

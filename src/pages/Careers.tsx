@@ -174,17 +174,13 @@ export const Careers: React.FC = () => {
                 disabled={isSubmitting}
                 className="w-full px-6 py-4 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-bold text-lg transition-colors flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Opening WhatsApp...' : (
+                {isSubmitting ? 'Submitting...' : (
                   <>
                     <Send />
-                    Send Application via WhatsApp
+                    Submit
                   </>
                 )}
               </button>
-
-              <p className="text-xs text-slate-500 text-center mt-4">
-                Your application will be sent via WhatsApp to <span className="font-semibold text-brand-600">+91 9036940860</span>.
-              </p>
             </form>
           </div>
         </div>

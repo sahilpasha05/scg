@@ -29,17 +29,16 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="cursor-pointer group flex-1"
+              className="cursor-pointer group flex-shrink-0 flex items-center"
               onClick={() => handleNavClick(PageView.HOME)}
             >
               {/* Updated Logo for Mobile View */}
               <img
                 src={logo}
                 alt="Society Ledgers - Your Compliance Backbone"
-                className="rounded-lg w-auto h-auto max-w-[90%] sm:max-w-[95%] max-h-14 sm:max-h-16 object-contain object-left ml-2 group-hover:scale-105 transition-transform duration-300 drop-shadow-xl"
+                className="rounded-lg w-auto h-12 sm:h-16 object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xl"
                 style={{
                   imageRendering: 'crisp-edges',
-                  marginLeft: '5%', // Subtle shift to the right
                 }}
               />
             </motion.div>
@@ -60,8 +59,8 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
 
       {/* Desktop Header */}
       <header className="hidden lg:block fixed top-3 xl:top-6 left-0 right-0 z-50 pointer-events-none">
-        <div className="flex justify-center px-4">
-          <div className="flex items-center gap-3 xl:gap-4 pointer-events-auto w-full max-w-[95%] xl:max-w-[90%]">
+        <div className="px-3 xl:px-4">
+          <div className="flex items-center pointer-events-auto">
             <motion.div
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -70,13 +69,13 @@ export const Header: React.FC<HeaderProps> = ({ currentView, onNavigate }) => {
                 type: 'spring',
                 stiffness: 100,
               }}
-              className="cursor-pointer group flex-shrink-0"
+              className="cursor-pointer group flex-shrink-0 flex items-center mr-3 xl:mr-4"
               onClick={() => handleNavClick(PageView.HOME)}
             >
               <img
                 src={logo}
                 alt="Society Ledgers - Your Compliance Backbone"
-                className="rounded-lg h-[56px] xl:h-[64px] w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-2xl"
+                className="rounded-lg h-[68px] xl:h-[76px] w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-2xl"
                 style={{ imageRendering: 'crisp-edges' }}
               />
             </motion.div>

@@ -228,7 +228,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       </section>
 
      {/* Why Us / Quote Section */}
-<SectionWrapper background="dark" className="relative py-12">
+<SectionWrapper background="dark" className="relative py-12 pb-6">
   <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-900/30 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
 
   <div className="max-w-6xl mx-auto">
@@ -256,7 +256,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             </div>
             <h4 className="text-lg font-bold text-white">{strength.title}</h4>
           </div>
-          <p className="text-slate-400 text-sm leading-relaxed flex-grow">{strength.description}</p>
+          <p className="text-slate-400 text-sm leading-relaxed flex-grow text-justify">{strength.description}</p>
         </div>
       ))}
 
@@ -294,7 +294,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             </div>
             <h4 className="text-lg font-bold text-white">{strength.title}</h4>
           </div>
-          <p className="text-slate-400 text-sm leading-relaxed flex-grow">{strength.description}</p>
+          <p className="text-slate-400 text-sm leading-relaxed flex-grow text-justify">{strength.description}</p>
         </div>
       ))}
     </div>
@@ -302,7 +302,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 </SectionWrapper>
 
 {/* Testimonials - Carousel */}
-<SectionWrapper background="light" className="py-12">
+<SectionWrapper background="light" className="py-6">
   <div className="max-w-6xl mx-auto">
     <div className="flex flex-col md:flex-row justify-between items-end mb-10 px-4">
       <div>

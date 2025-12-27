@@ -72,7 +72,7 @@ export const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-bold text-slate-900">Our Office</h4>
                   <p className="text-slate-600 mt-1">
-                    LedgerWorks Private Limited<br />
+                    <span className="font-semibold" style={{ color: '#7E287F' }}>LedgerWorks Private Limited</span><br />
                     # 134, Krishnappa Layout,<br />
                     Doddakannelli, Sarjapur Road,<br />
                     Bengaluru–560035
@@ -166,6 +166,28 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
               <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">Society Name</label>
+                <input
+                  type="text"
+                  name="societyName"
+                  value={formData.societyName}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition-all"
+                  placeholder="Your society/apartment name"
+                />
+              </div>
+              <div>
                 <label className="block text-sm font-medium text-slate-700 mb-2">Message <span className="text-red-500">*</span></label>
                 <textarea
                   rows={4}
@@ -188,10 +210,7 @@ export const Contact: React.FC = () => {
                   </>
                 )}
               </button>
-              <p className="text-xs text-slate-500 text-center">
-                Your message will be sent via WhatsApp to <span className="font-semibold text-brand-600">+91 90369 40860</span>
-              </p>
-            </form>
+             </form>
           </div>
         </div>
       </SectionWrapper>

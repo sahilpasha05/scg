@@ -28,17 +28,12 @@ export const Services:  React.FC = () => {
                 >
                     {/* Image Section - Left */}
                     <div className="w-full md:w-1/2">
-                        <div className="relative group rounded-2xl overflow-hidden shadow-xl border border-slate-100">
-                           <div className="absolute inset-0 bg-brand-900/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                        <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-100">
                            <img 
                               src={service.image} 
                               alt={service.title} 
-                              className="w-full h-64 md:h-80 object-cover transform group-hover:scale-105 transition-transform duration-700" 
+                              className="w-full h-64 md:h-80 object-cover" 
                            />
-                           {/* Icon Overlay */}
-                           <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm p-3 rounded-xl text-brand-600 shadow-md">
-                              {React.cloneElement(service.icon as React. ReactElement<any>, { size:  24 })}
-                           </div>
                         </div>
                     </div>
 
